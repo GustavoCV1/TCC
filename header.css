@@ -50,9 +50,9 @@
 }
 
 .dropdown-item:focus, .dropdown-item:hover {
-    color: #39c234;
+    color: #16181b;
     text-decoration: none;
-    background-color: #e71313;
+    background-color: #dcdcdc;
 }
 
   li.nav-item{    padding: 10px 20px;}
