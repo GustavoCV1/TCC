@@ -8,35 +8,25 @@
 
 
 .dropdown-submenu{
-    position: relative;
+    position: fixed;
 }
 .dropdown-submenu a::after{
     transform: rotate(-90deg);
-    position: absolute;
+    position: fixed;
     right: 3px;
-    top: 40%;
+    top: 0px;
 }
 .dropdown-submenu:hover .dropdown-menu, .dropdown-submenu:focus .dropdown-menu{
     display: flex;
     flex-direction: column;
-    position: absolute;
-    margin-top: -30px;
+    position: fixed;
+    margin-top: 0;
     left: 100%;
-}
-@media (max-width: 992px) {
-    .dropdown-menu{
-        width: 50%;
-    }
-    .dropdown-menu .dropdown-submenu{
-        width: auto;
-    }
-
-    .dropdown-menu{ left: -131%;}
 }
 
 .dropdown-submenu a::after {
     right: 16px;
-    top: 42%;
+    top: 0px;
 }
 
 .dropdown-item {
