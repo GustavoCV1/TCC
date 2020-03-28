@@ -1,10 +1,55 @@
-<nav id="nav-1">
-  <img src="Imagens/Logo Plexus (completo).png" width="200px" height="200px">
-  <a class="link-1" href="index.html">Home</a>
-  <a class="link-1" href="#nosso_team">Time Plexus</a>
-  <a class="link-1" href="#value_mission_and_vision">Sobre a Plexus</a>
-  <a class="link-1" href="#contato">Contato</a>
-</nav>
+
+<div class="navbar navbar-fixed-top">
+  <nav class="navbar-inner header">
+    <div class="container">
+      <div class="brand">
+        IN THE CLOUDS <i class="fa fa-cloud"></i> </i>
+      </div>
+      <ul class="nav pull-right">
+        <li>
+          <a class="nav-link">
+            TUTORIALS
+          </a>
+        </li>
+        <li>
+          <a class="nav-link">
+            MODELS
+          </a>
+        </li>
+        <li>
+          <a class="nav-link">
+            PLACES
+          </a>
+        </li>
+      </ul>
+      <div class="triangle-down center">
+        <p>
+          <i class="fa fa-chevron-down fa-2x isDown" id="toggle"></i>
+        </p>
+      </div>
+    </div>
+  </nav>
+  <br/>
+</div>
+
+
+
+<script>
+  $("#toggle").click( function(event){
+    event.preventDefault();
+    if ($(this).hasClass("isDown") ) {
+        $( ".navbar-fixed-top" ).animate({ "margin-top": "-62px" }, "fast" );  
+        $( "#content" ).animate({ "margin-top": "5px" }, "fast" );
+        $(this).removeClass("isDown");
+    } else {
+        $( ".navbar-fixed-top" ).animate({ "margin-top": "0px" }, "fast" );
+        $( "#content" ).animate({ "margin-top": "80px" }, "fast" );
+        $(this).addClass("isDown");
+    }
+    return false;
+});
+
+</script>
 
 
 
