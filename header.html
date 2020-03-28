@@ -1,4 +1,3 @@
-
 <div class="navbar navbar-fixed-top">
   <nav class="navbar-inner header">
     <div class="container">
@@ -8,17 +7,17 @@
       <ul class="nav pull-right">
         <li>
           <a class="nav-link">
-            QUEM NÓS SOMOS?
+            TUTORIALS
           </a>
         </li>
         <li>
           <a class="nav-link">
-            SOBRE NÓS
+            MODELS
           </a>
         </li>
         <li>
           <a class="nav-link">
-            CONTATO
+            PLACES
           </a>
         </li>
       </ul>
@@ -38,18 +37,15 @@
   $("#toggle").click( function(event){
     event.preventDefault();
     if ($(this).hasClass("isDown") ) {
-        $( ".navbar-fixed-top" ).animate({ "margin-top": "-62px" }, "slow" );  
-        $( "#content" ).animate({ "margin-top": "100px" }, "slow" );
+        $( ".navbar-fixed-top" ).animate({ "margin-top": "-62px" }, "fast" );  
+        $( "#content" ).animate({ "margin-top": "5px" }, "fast" );
         $(this).removeClass("isDown");
     } else {
-        $( ".navbar-fixed-top" ).animate({ "margin-top": "0px" }, "slow" );
-        $( "#content" ).animate({ "margin-top": "80px" }, "slow" );
+        $( ".navbar-fixed-top" ).animate({ "margin-top": "0px" }, "fast" );
+        $( "#content" ).animate({ "margin-top": "80px" }, "fast" );
         $(this).addClass("isDown");
     }
     return false;
 });
 
 </script>
-
-
-
