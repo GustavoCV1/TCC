@@ -1,48 +1,35 @@
-.main-menubox {
-    display: none;
+@import url(https://fonts.googleapis.com/css?family=Raleway);
+body {
+  margin: 0px;
+}
+nav {
+  margin-top: 40px;
+  padding: 24px;
+  text-align: center;
+  font-family: Raleway;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+}
+#nav-1 {
+  background: #c4afd6;
 }
 
-.main-menu:hover .main-menubox{
-    display: block;
+.link-1 {
+  transition: 0.3s ease;
+  background: #9a70bd;
+  color: #ffffff;
+  font-size: 20px;
+  text-decoration: none;
+  border-top: 4px solid  #9a70bd;
+  border-bottom: 4px solid #9a70bd;
+  padding: 20px 0;
+  margin: 0 20px;
+}
+.link-1:hover {
+  border-top: 4px solid #ffff;
+  border-bottom: 4px solid  #ffff;
+  text-decoration: none;
+  padding: 6px 0; 
 }
 
 
-.dropdown-submenu{
-    position: fixed;
-}
-.dropdown-submenu a::after{
-    transform: rotate(-90deg);
-    position: fixed;
-    right: 3px;
-    top: 0px;
-}
-.dropdown-submenu:hover .dropdown-menu, .dropdown-submenu:focus .dropdown-menu{
-    display: flex;
-    flex-direction: column;
-    position: fixed;
-    margin-top: 0;
-    left: 100%;
-}
 
-.dropdown-submenu a::after {
-    right: 16px;
-    top: 0px;
-}
-
-.dropdown-item {
-    padding: 8px 18px;
-}
-
-    .dropdown-item{white-space: normal}
-
-    .navbar-expand-lg .navbar-nav .dropdown-menu {
-    font-size: 14px;
-}
-
-.dropdown-item:focus, .dropdown-item:hover {
-    color: #16181b;
-    text-decoration: none;
-    background-color: #dcdcdc;
-}
-
-  li.nav-item{    padding: 10px 20px;}
