@@ -2,26 +2,14 @@
   font-family: Futura, "Trebuchet MS", Arial, sans-serif;
 }
 
-<<<<<<< HEAD
-  // html, body {
-  // height: 100%;
-  // margin: 0;
-  // background: url(https://i.pinimg.com/originals/69/6a/84/696a84779ed18f7d905f7d8461bc7485.jpg) no-repeat center center fixed; 
-  // -webkit-background-size: cover;
-  // -moz-background-size: cover;
-  // -o-background-size: cover;
-  // background-size: cover;
- // }
-=======
-html, body {
-  height: 100%;
-  margin: 0;
+   html, body {
+   height: 100%;
+   margin: 0;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-}
->>>>>>> 86d2e03bcb5f236bec6fe022a44ff98ca1b384af
+ }
 #content{
   margin-top:80px;
   color:white;
@@ -36,12 +24,12 @@ html, body {
   border-top: 4px solid white;
 
   transition: border-top .3s;
-  &:hover{border-top: 4px solid dodgerblue;}
+  &:hover{border-top: 4px solid purple;}
 }
 
 .dropdown-menu li > a:hover, .dropdown-menu li > a:focus, .dropdown-submenu:hover > a{
   background-image:none;
-  background-color:dodgerblue;
+  background-color:purple;
 }
 
 
@@ -49,15 +37,15 @@ html, body {
   letter-spacing:4px;
   border-top: 4px solid white;
   transition: border-top .3s;
-  &:hover{border-top: 4px solid dodgerblue;}
-  &:hover{border-top: 4px solid dodgerblue;}
+  &:hover{border-top: 4px solid purple;}
+  &:hover{border-top: 4px solid purple;}
 }
 
 .header{
   background-color: rgba(255,255,255, .95);
   /* remove the gradient */
   background-image: none !important;
-  border-bottom:2px solid dodgerblue !important;
+  border-bottom:2px solid purple !important;
   line-height: 40px !important;
   box-shadow: 0 12px 6px -6px rgba(0,0,0, .2) !important;
 }
@@ -85,7 +73,7 @@ background: linear-gradient(to bottom, rgba(255,255,255,0) 0%,rgba(255,255,255,.
 	border-left: 30px solid transparent;
 	border-right: 30px solid transparent;
 	
-	border-top: 30px solid dodgerblue;
+	border-top: 30px solid purple;
 }
 
 .triangle-down p{  
@@ -109,7 +97,7 @@ background: linear-gradient(to bottom, rgba(255,255,255,0) 0%,rgba(255,255,255,.
 
 h3{  
   transition: color .5s;
-  &:hover{color:rgba(36, 142, 255, .8);}
+  &:hover{color:purple;}
 }
 
 #big-cloud{
