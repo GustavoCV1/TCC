@@ -8,17 +8,17 @@
       <ul class="nav pull-right">
         <li>
           <a class="nav-link">
-            TUTORIALS
+            QUEM NÓS SOMOS?
           </a>
         </li>
         <li>
           <a class="nav-link">
-            MODELS
+            SOBRE NÓS
           </a>
         </li>
         <li>
           <a class="nav-link">
-            PLACES
+            CONTATO
           </a>
         </li>
       </ul>
@@ -38,12 +38,12 @@
   $("#toggle").click( function(event){
     event.preventDefault();
     if ($(this).hasClass("isDown") ) {
-        $( ".navbar-fixed-top" ).animate({ "margin-top": "-62px" }, "fast" );  
-        $( "#content" ).animate({ "margin-top": "5px" }, "fast" );
+        $( ".navbar-fixed-top" ).animate({ "margin-top": "-62px" }, "slow" );  
+        $( "#content" ).animate({ "margin-top": "100px" }, "slow" );
         $(this).removeClass("isDown");
     } else {
-        $( ".navbar-fixed-top" ).animate({ "margin-top": "0px" }, "fast" );
-        $( "#content" ).animate({ "margin-top": "80px" }, "fast" );
+        $( ".navbar-fixed-top" ).animate({ "margin-top": "0px" }, "slow" );
+        $( "#content" ).animate({ "margin-top": "80px" }, "slow" );
         $(this).addClass("isDown");
     }
     return false;
