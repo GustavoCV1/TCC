@@ -2,6 +2,7 @@
   font-family: Futura, "Trebuchet MS", Arial, sans-serif;
 }
 
+<<<<<<< HEAD
   // html, body {
   // height: 100%;
   // margin: 0;
@@ -11,6 +12,16 @@
   // -o-background-size: cover;
   // background-size: cover;
  // }
+=======
+html, body {
+  height: 100%;
+  margin: 0;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+>>>>>>> 86d2e03bcb5f236bec6fe022a44ff98ca1b384af
 #content{
   margin-top:80px;
   color:white;
