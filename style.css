@@ -27,24 +27,44 @@ html {
 
 @media (min-width: 640px) {
     body {font-size:1rem;}
+    div{
+        width:100%;
+        height:100%;
+    }
 } 
 
 @media (min-width:960px) { 
     body {font-size:1.2rem;} 
+    div{
+        width:100%;
+        height:100%;
+    }
 } 
 
 @media (min-width:1100px) { 
     body {font-size:1.5rem;} 
+    div{
+        width:100%;
+        height:100%;
+    }
 } 
 
 /* Media Queries: Tablet Landscape */
 @media screen and (max-width: 1060px) {
     #bs-carousel, #nosso-team, #value_mission_and_vision, #contatos, #footer { width:100%; }
     #header { width:30%; margin-left:3%;}  
+    div{
+        width:100%;
+        height:100%;
+    }
 }
 
 /* Media Queries: Tabled Portrait */
 @media screen and (max-width: 768px) {
     #bs-carousel, #nosso-team, #value_mission_and_vision, #contatos, #footer { width:100%; }
     #header { width:100%; margin:0; border:none; }
+    div{
+        width:100%;
+        height:100%;
+    }
 }
