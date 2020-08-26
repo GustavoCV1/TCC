@@ -1,0 +1,36 @@
+<div class="w3-container w3-padding-64 w3-center" id="team">
+    <h2>Nossos Parceiros</h2>
+    <p>Conheça os nossos parceiros</p><br/>
+
+<div class="customer-logos">
+    <div class="slide"><img src="Imagens/ozi.png"></div>
+    <div class="slide"><img src="Imagens/ggl.png"></div>
+    <div class="slide"><img src="Imagens/loop.png"></div>
+    <div class="slide"><img src="https://raw.githubusercontent.com/solodev/infinite-carousel/master/images/image4.png"></div>
+    <div class="slide"><img src="https://raw.githubusercontent.com/solodev/infinite-carousel/master/images/image5.png"></div>
+    </div>
+
+  <script>
+$(document).ready(function(){
+			$('.customer-logos').slick({
+				slidesToShow: 4,
+				slidesToScroll: 1,
+				autoplay: true,
+				autoplaySpeed: 500,
+				arrows: false,
+				dots: false,
+					pauseOnHover: false,
+					responsive: [{
+					breakpoint: 768,
+					settings: {
+						slidesToShow: 3
+					}
+				}, {
+					breakpoint: 520,
+					settings: {
+						slidesToShow: 2
+					}
+				}]
+			});
+		});      
+  </script>
