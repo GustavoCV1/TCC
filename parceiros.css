@@ -1,5 +1,5 @@
 .customer-logos {
-    background-color: rgb(103, 58, 186);
+    background-color: rgb(255, 255, 255);
     height: 220px;
   }
   
@@ -8,7 +8,7 @@
   }
   
   .slick-slide img {
-      width: 54%;
+      width: 50%;
   }
   
   .slick-slider
