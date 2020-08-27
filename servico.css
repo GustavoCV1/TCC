@@ -138,7 +138,8 @@
     box-shadow: 0 0 15px 0 rgba(0,0,0,.10);
     padding: 20px;
     text-align: center;
-    transition: ease all 0.5s;
+	transition: ease all 0.5s;
+	height: 335px;
 }
 
 .about_section {
@@ -147,7 +148,7 @@
 
 .feature_box:hover,
 .feature_box:focus {
-   background: #fc301e;
+   background: rgb(103, 58, 186);
 }
 
 .feature_box:hover h4,
@@ -190,7 +191,7 @@
 .title-box h2 {
 	font-size: 75px;
 	font-family: 'Great Vibes', cursive;
-	color: #e91327;
+	color: rgb(103, 58, 186);
 	font-weight: 400;
 	padding: 0;
 }
@@ -334,7 +335,7 @@ figure.effect-service h2 {
 }
 
 figure.effect-service h2 {
-	background: #e91327;
+	background: rgb(103, 58, 186);
 	padding: 13px;
 	width: 94%;
 	height: 58px;
@@ -386,7 +387,7 @@ figure.effect-service:hover p {
 }
 
 figure.effect-service:hover {
-	border: 8px solid #e91327;
+	border: 8px solid rgb(103, 58, 186);
 }
 
 .services_blog h4 {
