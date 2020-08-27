@@ -147,7 +147,7 @@
 
 .feature_box:hover,
 .feature_box:focus {
-   background: #fc301e;
+   background: rgb(103, 58, 183);
 }
 
 .feature_box:hover h4,
