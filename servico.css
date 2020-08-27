@@ -148,11 +148,7 @@
 
 .feature_box:hover,
 .feature_box:focus {
-<<<<<<< HEAD
-   background: rgb(103, 58, 186);
-=======
    background: rgb(103, 58, 183);
->>>>>>> 898e000ba8b2869379f78cb73f67b46eb32aedc8
 }
 
 .feature_box:hover h4,
