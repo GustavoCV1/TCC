@@ -25,6 +25,10 @@ html {
     font-size:100%;
 }
 
+.fa fa-instagram {
+    color:white;
+}
+
 @media (min-width: 640px) {
     body {font-size:1rem;}
 } 
