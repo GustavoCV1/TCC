@@ -25,29 +25,29 @@
   border-top: 4px solid white;
 
   transition: border-top .3s;
-  &:hover{border-top: 4px solid purple;}
+  &:hover{border-top: 4px solid rgb(103, 58, 183);}
 }
 
 .dropdown-menu li > a:hover, .dropdown-menu li > a:focus, .dropdown-submenu:hover > a{
   background-image:none;
-  background-color:purple;
+  background-color:rgb(103, 58, 183);
 }
 
 
 .brand{
   letter-spacing:4px;
-  border-top: 4px solid white;
+  border-top: 0px solid white;
   transition: border-top .3s;
-  &:hover{border-top: 4px solid purple;}
-  &:hover{border-top: 4px solid purple;}
+  &:hover{border-top: 4px solid rgb(103, 58, 183);}
+  &:hover{border-top: 4px solid rgb(103, 58, 183);}
 }
 
 .header{
   background-color: rgba(255,255,255, .95);
   /* remove the gradient */
   background-image: none !important;
-  border-bottom:4px solid purple !important;
-  line-height: 40px !important;
+  border-bottom:4px solid rgb(103, 58, 183) !important;
+  line-height: 35px !important;
   box-shadow: 0 12px 6px -6px rgba(0,0,0, .2) !important;
 }
 
@@ -74,7 +74,7 @@ background: linear-gradient(to bottom, rgba(255,255,255,0) 0%,rgba(255,255,255,.
 	border-left: 35px solid transparent;
 	border-right: 35px solid transparent;
 	
-	border-top: 30px solid purple;
+	border-top: 30px solid rgb(103, 58, 183);
 }
 
 .triangle-down p{  
@@ -98,7 +98,7 @@ background: linear-gradient(to bottom, rgba(255,255,255,0) 0%,rgba(255,255,255,.
 
 h3{  
   transition: color .5s;
-  &:hover{color:purple;}
+  &:hover{color:rgb(103, 58, 183);}
 }
 
 #big-cloud{
