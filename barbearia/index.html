@@ -36,6 +36,40 @@
     .fa.fa-linkedin{
         color: white;
     }
+    .row {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 4px;
+}
+
+/* Create four equal columns that sits next to each other */
+.column {
+  flex: 25%;
+  max-width: 25%;
+  padding: 0 4px;
+}
+
+.column img {
+  margin-top: 8px;
+  vertical-align: middle;
+  width: 100%;
+}
+
+/* Responsive layout - makes a two column-layout instead of four columns */
+@media screen and (max-width: 800px) {
+  .column {
+    flex: 50%;
+    max-width: 50%;
+  }
+}
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .column {
+    flex: 100%;
+    max-width: 100%;
+  }
+}
 </style>
 
 </head>
@@ -70,7 +104,54 @@
     <div class="texto"> Nosso estilo de cabelo faz seu look ser elegante </div>
    <!---- <h1>My First Bootstrap 4 Page</h1>
     <p>Resize this responsive page to see the effect!</p> --->
+</div>
+
+<div class="about us">
+  <p class="about us title bg-white text-dark text-center"> Sobre nós </p>
+  <img src="about.jpg">
+  A White Beard é uma barbearia em Guarulhos onde você pode cuidar da barba, cabelo, bigode, bater um papo, relaxar e tomar uma boa bebida! 
+  Venha nos visitar será uma honra recebê-lo.
+  Aqui,  você desfruta de um ambiente aconchegante e totalmente descontraído, livres de quaisquer preocupações, aproveitando até para “tomar uma” no nosso bar, é quase como se estivesse em casa com os amigos enquanto aguarda para dar um Up no visual. E com certeza o que chamaríamos de Vintage com um toque de tecnologia e é claro com as ultimas novidades e os melhores produtos para o cuidado masculino, que proporciona não somente um corte bem feito, mas sim uma experiência única!
+  Se você quer uma Barbearia em Guarulhos ou região e gosta de cuidar bem da Barba e Cabelo, com certeza vai curtir a Barba Branca Barbearia!! 
+
+</div>
+
+
+<div class="gallery bg-dark">
+  <br/>
+  <p class="gallery title text-center text-white"> Galeria </p>
+  <div class="row">
+    <div class="column">
+      <img src="img1.jpg">
+      <img src="img2.jpg">
+      <img src="img3.jpg">
+
+    </div>
+    <div class="column">
+      <img src="img4.jpg">
+      <img src="img5.jpg">
+      <img src="img6.jpg">
+    </div>
+    <div class="column">
+      <img src="img7.jpg">
+      <img src="img8.jpg">
+      <img src="img9.jpg">
+    </div>
+    <div class="column">
+      <img src="img10.jpg">
+      <img src="img11.jpg">
+      <img src="img12.jpg">
+    </div>
   </div>
+  <br/>
+</div>
+
+<div class="services bg-white">
+  <p class="services title text-center text-white"> Serviços </p>
+
+
+</div>
+
 
 <div class="container" style="margin-top:30px">
   <div class="row">
