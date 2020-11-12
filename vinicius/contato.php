@@ -1,20 +1,25 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title> Contato </title>
-    <meta charset="utf-8">
-</head>
-<body>
-    <form method="POST" action="Contato.controller.php" > 
-        <p> Nome</p> <input type="text" name="nome" />
-        <br/>
-        <p> Email </p> <input type="text" name="email" />
-        <br/>
-        <p> Assunto </p> <textarea name = "assunto" rows="5" cols="50">
-            Digite sua mensagem!!!
-        </textarea>
-        <br/>
-        <input type="submit" name = "acao" value="Enviar"/>
-    </form>
-</body>
-</html>
+<div class = "row">
+    <div class = "col-1"></div>
+    <div class = "col-10">
+        <form method="POST" action="Contato.controller.php" > 
+            <div class="form-group">
+                <br/>
+                <br/>
+                <label for="nome"> Nome:</label> <input type="text" name="nome" class = "form-control" placeholder="Digite seu nome" />
+                <br/>
+            </div>
+            <div class="form-group">
+                <label for="email"> Email: </label> <input type="text" name="email" class = "form-control" placeholder="Digite seu email" />
+                <br/>
+            </div>
+            <div class="form-group">
+                <label for="assunto"> Mensagem: </label> <textarea name = "assunto" rows="5" class="form-control" placeholder="Digite sua Mensagem"></textarea>
+                <br/>
+            </div>
+            <button type="submit" class="btn btn-dark" name = "acao" /> Enviar </button>
+        </form>
+    </div>
+    <div class = "col-1"></div>
+</div>
+
+<br/>

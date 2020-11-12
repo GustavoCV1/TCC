@@ -1,116 +1,13 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Barbearia Xavier</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-  <script src='https://kit.fontawesome.com/a076d05399.js'></script>
-  <script src='https://kit.fontawesome.com/a076d05399.js'></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <script src="jquery-3.5.1.min.js"></script>
-  <style>
-    /* Make the image fully responsive */
-    .carousel-inner img {
-      width: 100%;
-      height: 100%;
-    }
+<div id="demo" class="carousel slide" data-ride="carousel">
 
-    .servico{
-      color: white;
-    }
-
-    /* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
-.flip-card {
-  background-color: transparent;
-  width: 300px;
-  height: 200px;
-  border: 1px solid #f1f1f1;
-  perspective: 1000px; /* Remove this if you don't want the 3D effect */
-}
-
-/* This container is needed to position the front and back side */
-.flip-card-inner {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  text-align: center;
-  transition: transform 0.8s;
-  transform-style: preserve-3d;
-}
-
-/* Do an horizontal flip when you move the mouse over the flip box container */
-.flip-card:hover .flip-card-inner {
-  transform: rotateY(180deg);
-}
-
-/* Position the front and back side */
-.flip-card-front, .flip-card-back {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  -webkit-backface-visibility: hidden; /* Safari */
-  backface-visibility: hidden;
-}
-
-/* Style the front side (fallback if image is missing) */
-.flip-card-front {
-  background-color: #bbb;
-  color: black;
-}
-
-/* Style the back side */
-.flip-card-back {
-  background-color: dodgerblue;
-  color: white;
-  transform: rotateY(180deg);
-}
-
-.fa {
-  padding: 20px;
-  font-size: 30px;
-  width: 50px;
-  text-align: center;
-  text-decoration: none;
-  margin: 5px 2px;
-}
-
-.fa-facebook {
-  background: black;
-  color: white;
-}
-    
-</style>
-
-<script type="text/javascript">
-  function carregar() {
-    $('#contato').load('contato.php');
-    $('#header').load('header.php');
-    $('#footer').load('footer.php');
-    $('#content').load('content.php');
-      }
-</script>
-
-</head>
-<body onload="carregar()">
-
-  <div id="header"></div>
-
-  <div id="content"></div>
-<!--
-  <div id="demo" class="carousel slide" data-ride="carousel">
-
-    -- Indicators --
+    <!-- Indicators -->
     <ul class="carousel-indicators">
       <li data-target="#demo" data-slide-to="0" class="active"></li>
       <li data-target="#demo" data-slide-to="1"></li>
       <li data-target="#demo" data-slide-to="2"></li>
     </ul>
   
-    -- The slideshow --
+    <!-- The slideshow -->
     <div class="carousel-inner">
       <div class="carousel-item active">
         <img src="imagens\carrousel1.jpg" alt="Los Angeles">
@@ -123,7 +20,7 @@
       </div>
     </div>
   
-    -- Left and right controls --
+    <!-- Left and right controls -->
     <a class="carousel-control-prev" href="#demo" data-slide="prev">
       <span class="carousel-control-prev-icon"></span>
     </a>
@@ -226,74 +123,76 @@
     <br />
     <br />
     </div>
-
+    <div id="portfolio">
     <br />
     <br />
     <br />
 
-    <div class="row">
-      <div class="col-1"> </div>
-      <div class="col-10"> 
-        <div class="row"> 
-          <div class="col-3"> 
-            <div class="content">
-              <img src="imagens/galeria1.jpeg" class="rounded" width="250" height="250"/>
+    
+        <div class="row">
+          <div class="col-1"> </div>
+          <div class="col-10"> 
+            <div class="row"> 
+              <div class="col-3"> 
+                <div class="content">
+                  <img src="imagens/galeria1.jpeg" class="rounded" width="250" height="250"/>
+                </div>
+              </div>
+              <div class="col-3">
+                <div class="content">
+                  <img src="imagens/galeria2.jpeg" class="rounded" width="250" height="250"/>
+                </div>
+              </div>
+              <div class="col-3">
+                <div class="content">
+                  <img src="imagens/galeria3.jpeg" class="rounded" width="250" height="250"/>
+                </div>
+              </div>
+              <div class="col-3">
+                <div class="content">
+                  <img src="imagens/galeria4.jpeg" class="rounded" width="250" height="250"/>
+                </div>
+              </div>  
             </div>
           </div>
-          <div class="col-3">
-            <div class="content">
-              <img src="imagens/galeria2.jpeg" class="rounded" width="250" height="250"/>
-            </div>
-          </div>
-          <div class="col-3">
-            <div class="content">
-              <img src="imagens/galeria3.jpeg" class="rounded" width="250" height="250"/>
-            </div>
-          </div>
-          <div class="col-3">
-            <div class="content">
-              <img src="imagens/galeria4.jpeg" class="rounded" width="250" height="250"/>
-            </div>
-          </div>  
-        </div>
+      
+          <div class="col-1"> </div>
+
       </div>
-  
-      <div class="col-1"> </div>
 
-  </div>
+      <br />
+      
+      <div class="row">
+        <div class="col-1"> </div>
+        <div class="col-10"> 
+          <div class="row"> 
+            <div class="col-3"> 
+              <div class="content">
+                <img src="imagens/galeria5.jpeg" class="rounded" width="250" height="250"/>
+              </div>
+            </div>
+            <div class="col-3">
+              <div class="content">
+                <img src="imagens/galeria6.jpeg" class="rounded" width="250" height="250"/>
+              </div>
+            </div>
+            <div class="col-3">
+              <div class="content">
+                <img src="imagens/galeria7.jpeg" class="rounded" width="250" height="250"/>
+              </div>
+            </div>
+            <div class="col-3">
+              <div class="content">
+                <img src="imagens/galeria8.jpeg" class="rounded" width="250" height="250"/>
+              </div>
+            </div>  
+          </div>
+        </div>
 
-  <br />
-  
-  <div class="row">
-    <div class="col-1"> </div>
-    <div class="col-10"> 
-      <div class="row"> 
-        <div class="col-3"> 
-          <div class="content">
-            <img src="imagens/galeria5.jpeg" class="rounded" width="250" height="250"/>
-          </div>
-        </div>
-        <div class="col-3">
-          <div class="content">
-            <img src="imagens/galeria6.jpeg" class="rounded" width="250" height="250"/>
-          </div>
-        </div>
-        <div class="col-3">
-          <div class="content">
-            <img src="imagens/galeria7.jpeg" class="rounded" width="250" height="250"/>
-          </div>
-        </div>
-        <div class="col-3">
-          <div class="content">
-            <img src="imagens/galeria8.jpeg" class="rounded" width="250" height="250"/>
-          </div>
-        </div>  
-      </div>
+        <div class="col-1"> </div>
+
     </div>
-
-    <div class="col-1"> </div>
-
-</div>
+  </div>
 
 <br />
 
@@ -352,9 +251,3 @@
 
   </div>
   <br/>
--->
-  <div id="footer"></div>
-
-</body>
-</html>
-

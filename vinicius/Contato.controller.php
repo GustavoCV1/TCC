@@ -14,7 +14,7 @@
 
         $sql = $pdo->prepare("INSERT INTO `contato` VALUES(null, ?, ?, ?, ?)");
         $sql->execute(array($nome, $email, $assunto, $data));
-        echo "Sucesso";        
+        echo "<script> alert('A sua mensagem foi enviada'); </script>";        
         }
 
 ?>
