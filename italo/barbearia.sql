@@ -38,6 +38,15 @@ create table servico(
     primary key(idServico)
 );
 
+create table contato(
+	idContato	int not null auto_increment,
+	nome		varchar(150),
+	email	    varchar(150),
+	assunto	    varchar(150),
+	dia    		date,
+    primary key(idContato)
+);
+
 INSERT INTO barbearia.clientes (idCliente, email, senha, telefone, nome, nascimento, genero, foto) VALUES
 ($idCliente, $email, $senha, $telefone, $nome, $nascimento, $genero, $foto);
 

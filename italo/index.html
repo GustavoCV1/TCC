@@ -1,37 +1,62 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title> Barbearia Xavier </title>
-        <meta charset="UTF-8"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
- 
-    </head>
-    <body>
-        <div class="container-fluid">
-            <img src = "" /> <!--- Foto da faixada-->
-        </div>
+<head>
+  <title>Barbearia Xavier</title>
+  <meta name="keywords" content="Projeto, Projeto Integrado, Plexus, Informática, Barbearia Xavier, Barbearia">
+  <meta name="description" content="Barbearia Xavier">
+  <meta name="author" content="Italo Roberto Lui">
+  <meta name="generation" content="Virtual Studio Code">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="HandheldFriendly" content="true">
+    
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    
+  <link rel="shortcut icon" type="image/x-icon" href="imagens/lamina-de-barbear.png">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-            <nav class="navbar navbar-expand-sm bg-dark navbar-dark sticky-top">
-                <a class="navbar-brand" href="#"> Barbearia Xavier</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse justify-content-end" id="collapsibleNavbar">
-                     <ul class="navbar-nav ">
-                        <li class="nav-item">
-                            <a class="nav-link text-white" href="">Portfólio</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-white" href="">Contato</a>
-                        </li> 
-                    </ul>
-                </div>  
-            </nav>
+  <script type="text/javascript">
+    function start() {
+      $('#header').load('header.php');
+      $('#carrosel').load('carrosel.php');
+      $('#servicosprodutos').load('servicosprodutos.php');
+      $('#sobre').load('sobre.php');
+      $('#equipe').load('equipe.php');
+      $('#social').load('social.php');
+      $('#contato').load('contato.php');
+      $('#footer').load('footer.php');
+    }
+  </script>
+    
+</head>
+    
+<body onload="start()">
+    
+    <div id="header" class="sticky-top"></div>
+    
+    <div id="carrosel"></div>
+    
+    <div id="sobre" class="border border-dark rounded"></div>
+        
+    <div id="servicosprodutos" class="border border-dark rounded"></div>
 
-        <h1> Barbearia Xavier</h1>
-    </body>
+    <div id="equipe" class="border border-light rounded"></div>
+    
+    <div id="social"></div>
+    
+    <div id="contato" class="border border-dark rounded"></div>
+    
+    <div id="footer"></div>
+    
+    
+</body>
+    
 </html>
+
