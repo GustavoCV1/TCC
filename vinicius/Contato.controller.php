@@ -12,9 +12,27 @@
         $assunto = $_POST['assunto'];
         $data = date('Y-m-d');
 
-        $sql = $pdo->prepare("INSERT INTO `contato` VALUES(null, ?, ?, ?, ?)");
-        $sql->execute(array($nome, $email, $assunto, $data));
+
+        $insert = $pdo->prepare("INSERT INTO `contato` VALUES(null, ?, ?, ?, ?)");
+        $insert->execute(array($nome, $email, $assunto, $data));
         echo "<script> alert('A sua mensagem foi enviada'); </script>";        
+        
+        /*
+        $select = $pdo->prepare("SELECT * FROM `contato` WHERE id = 8");
+        $select->execute();
+
+        $informacoes = $select->fetchAll(PDO::FETCH_ASSOC);
+
+        foreach ($informacoes as $key => $value) {
+            echo 'Nome: '.$value['nome'];
+            echo '<br/>';
+            echo 'Email: '.$value['email'];
+            echo '<br/>';
+            echo 'Mensagem: '.$value['assunto'];        
         }
 
+        $delete = $pdo->prepare("DELETE FROM `contato` WHERE id = 5");
+        $delete->execute();
+        */
+    }
 ?>
