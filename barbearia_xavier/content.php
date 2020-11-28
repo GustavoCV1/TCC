@@ -10,13 +10,13 @@
     <!-- The slideshow -->
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <img src="imagens\carrousel1.jpg" alt="Los Angeles">
+        <img src="imagens\img1.jpg" alt="Los Angeles">
       </div>
       <div class="carousel-item">
-        <img src="imagens\carrousel2.jpg" alt="Chicago">
+        <img src="imagens\img2.jpg" alt="Chicago">
       </div>
       <div class="carousel-item">
-        <img src="imagens\carrousel3.jpg" alt="New York">
+        <img src="imagens\img3.jpg" alt="New York">
       </div>
     </div>
   
