@@ -1,5 +1,6 @@
   <div class ="deselvolvedor bg-dark" style="color: white;"> 
     <br/>
-    <p><center> Desenvolvido por Vinicius Costa dos Santos </center></p>
+    <p><center> Barbearia Xavier© </center></p>
+    <p><center> Desenvolvido por Plexus Desenvolvedor Web </center></p>
     <br/>
   </div>
