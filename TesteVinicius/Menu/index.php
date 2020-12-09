@@ -15,6 +15,18 @@
   <link rel="stylesheet" href="./menu.css">
   <link rel="stylesheet" href="./sobre.css">
   <link rel="stylesheet" href="servicos.css">
+  <link rel="stylesheet" href="port.css">
+
+    <!--Portifólio-->
+  <link rel="stylesheet" href="css/base.css">  
+   <link rel="stylesheet" href="css/main.css">
+   <link rel="stylesheet" href="css/vendor.css">
+   <link rel="stylesheet" href="css/base.css">    
+
+   <script src="js/modernizr.js"></script>
+   <script src="js/pace.min.js"></script>
+   <script src="js/jquery-2.1.3.min.js"></script>
+
 
 <!---  <link rel="stylesheet" href="./sobre.css"> --->
 
@@ -29,6 +41,7 @@
         $("#carrousel").load('carrousel.php');
         $("#sobre").load('sobre.php');
         $("#servicos").load('servicos.php');
+        $("#port").load('port.php');
     }
 </script>
 
@@ -38,6 +51,7 @@
     <div id="carrousel"></div>
     <div id="sobre"></div></br></br></br>
     <div id="servicos"></div>
+    <div id="port"></div>
 
 
 </body>
