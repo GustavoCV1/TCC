@@ -3,7 +3,6 @@
   backface-visibility: hidden;
   vertical-align: middle;
   position: relative;
-  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
   transform: translateZ(0);
   transition-duration: .3s;
   transition-property: transform;
@@ -69,7 +68,7 @@
 /*everything below here is just setting up the page, so dont worry about it */
 @media (min-width: 768px) {
   .navbar {
-    text-align: center !important;
+    justify-content: center;
     float: none;
     display: inline-block;
   }
@@ -91,6 +90,7 @@ nav li {
 }
 nav li a {
   transition: .5s color ease-in-out;
+  margin-top: 1em;
 }
 
 .page-title {
