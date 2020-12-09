@@ -16,6 +16,7 @@
   <link rel="stylesheet" href="./sobre.css">
   <link rel="stylesheet" href="servicos.css">
   <link rel="stylesheet" href="port.css">
+  <link rel="stylesheet" href="share.css">
 
     <!--Portifólio-->
   <link rel="stylesheet" href="css/base.css">  
@@ -42,6 +43,7 @@
         $("#sobre").load('sobre.php');
         $("#servicos").load('servicos.php');
         $("#port").load('port.php');
+        $("share").load('share.php');
     }
 </script>
 
@@ -52,7 +54,7 @@
     <div id="sobre"></div></br></br></br>
     <div id="servicos"></div>
     <div id="port"></div>
-
+    <div id="share"></div>
 
 </body>
 </html>
