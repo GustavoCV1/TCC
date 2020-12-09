@@ -4,9 +4,7 @@
    		<div class="col-twelve">
 
    			<h5>Portfolio</h5>
-   			<h1>Check Out Some of My Works.</h1>
-
-   			<p class="lead">Lorem ipsum Do commodo in proident enim in dolor cupidatat adipisicing dolore officia nisi aliqua incididunt Ut veniam lorem ipsum Consectetur ut in in eu do.</p>
+   			<h1>Dê uma olhada nos nossos cortes</h1>
 
    		</div>   		
    	</div> <!-- /section-intro--> 
@@ -20,15 +18,12 @@
 
 	         	<div class="bgrid folio-item">
 	               <div class="item-wrap">
-	               	<img src="imagens/portfolio/liberty.jpg" alt="Liberty">
+	               	<img src="imagens/galeria1.jpeg" alt="Corte Infantil">
 	                  <a href="#modal-01" class="overlay">	                  	           
 	                     <div class="folio-item-table">
 	                     	<div class="folio-item-cell">
-		     					       <h3 class="folio-title">Liberty</h3>	     					    
-		     					    	 <span class="folio-types">
-		     					       	  Graphic Design
-		     					       </span>
-		     					   </div>	                      	
+		     					<h3 class="folio-title">Corte Infantil</h3>	     					    
+		     				</div>	                      	
 	                     </div>                    
 	                  </a>
 	               </div>	               
@@ -36,15 +31,12 @@
 
 	        		<div class="bgrid folio-item">
 	               <div class="item-wrap">
-	               	<img src="imagens/portfolio/shutterbug.jpg" alt="Shutterbug">
+	               	<img src="imagens/galeria2.jpeg" alt=">Desenhos na navalha">
 	               	<a href="#modal-02" class="overlay">              		                  
 	                     <div class="folio-item-table">
 	                     	<div class="folio-item-cell">
-	                     		<h3 class="folio-title">Shutterbug</h3>	     					    
-		     					    	<span class="folio-types">
-		     					       	  Web Design
-		     					      </span>		     		
-		     					   </div> 	                      	
+	                     		<h3 class="folio-title">Desenhos na navalha</h3>	     					    	     		
+		     				</div> 	                      	
 	                     </div>                    
 	                  </a>
 	               </div>
@@ -52,15 +44,12 @@
 
 	            <div class="bgrid folio-item">
 	               <div class="item-wrap">
-	               	<img src="imagens/portfolio/clouds.jpg"alt="Clouds">
+	               	<img src="imagens/galeria3.jpeg"alt="Penteados">
 	                  <a href="#modal-03" class="overlay">             		                  
 	                     <div class="folio-item-table">
 	                     	<div class="folio-item-cell">
-	                     		<h3 class="folio-title">Clouds</h3>	     					    
-		     					    	<span class="folio-types">
-		     					       	  Web Design
-		     					      </span>		     		
-		     					   </div> 	                      	
+	                     		<h3 class="folio-title">Penteados</h3>	     					         		
+		     				</div> 	                      	
 	                     </div>                    
 	                  </a>
 	               </div>
@@ -68,15 +57,12 @@
 
 	            <div class="bgrid folio-item">
 	               <div class="item-wrap">
-	               	<img src="imagens/portfolio/beetle.jpg" alt="Beetle">
+	               	<img src="imagens/galeria4.jpeg" alt="Cortes com spray colorido">
 	                  <a href="#modal-04" class="overlay">                  	                 
 	                     <div class="folio-item-table">
 	                     	<div class="folio-item-cell">
-	                     		<h3 class="folio-title">Beetle</h3>	     					    
-		     					    	<span class="folio-types">
-		     					       	  Branding
-		     					      </span>		     		
-		     					   </div>  	                      	
+	                     		<h3 class="folio-title">Cortes com spray colorido </h3>	     					    	     		
+		     				</div>  	                      	
 	                     </div>                    
 	                  </a>
 	               </div>
@@ -84,15 +70,12 @@
 
 	        		<div class="bgrid folio-item">
 	               <div class="item-wrap">
-	               	<img src="imagens/portfolio/lighthouse.jpg" alt="Lighthouse">
+	               	<img src="imagens/galeria6.jpeg" alt="Degradê com risquinha">
 	                  <a href="#modal-05" class="overlay">             		                  
 	                     <div class="folio-item-table">
 	                     	<div class="folio-item-cell">
-	                     		<h3 class="folio-title">Lighthouse</h3>	     					    
-		     					    	<span class="folio-types">
-		     					       	  Web Development
-		     					      </span>		     		
-		     					   </div> 	                      	
+	                     		<h3 class="folio-title">Degradê com risquinha</h3>	     					    		     		
+		     				</div> 	                      	
 	                     </div>                    
 	                  </a>
 	               </div>
@@ -100,15 +83,12 @@
 
 	            <div class="bgrid folio-item">
 	               <div class="item-wrap">
-	               	<img src="imagens/portfolio/salad.jpg" alt="Salad">
+	               	<img src="imagens/galeria7.jpeg" alt="Barbas">
 	                  <a href="#modal-06" class="overlay">
 	                     <div class="folio-item-table">
 	                     	<div class="folio-item-cell">
-	                     		<h3 class="folio-title">Salad</h3>	     					    
-		     					    	<span class="folio-types">
-		     					       	  Branding
-		     					      </span>		     		
-		     					   </div>	                      	
+	                     		<h3 class="folio-title">Barbas </h3>	     					    		     		
+		     				</div>	                      	
 	                     </div>                    
 	                  </a>
 	               </div>
@@ -119,19 +99,17 @@
 	            <div id="modal-01" class="popup-modal slider mfp-hide">	
 
 				     	<div class="media">
-				     		<img src="imagens/portfolio/modals/m-liberty.jpg" alt="" />
+							 <img src="imagens/galeria1.jpeg" alt="" />
 				     	</div>      	
 
 					   <div class="description-box">
-					      <h4>Liberty</h4>		      
-					      <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit.</p>
-
-					      <div class="categories">Web Development</div>			               
+					      <h4>Corte Infantil</h4>		      
+					      <p>Realizamos cortes infantis. Os cortes mais modernos para as crianças </p>
 					   </div>
 
 			         <div class="link-box">
-			            <a href="http://www.behance.net">Details</a>
-					      <a href="#" class="popup-modal-dismiss">Close</a>
+			            <a href="#">Agende já</a>
+					      <a href="#" class="popup-modal-dismiss">Fechar</a>
 			         </div>		      
 
 				   </div> <!-- /modal-01 -->
@@ -139,19 +117,18 @@
 				   <div id="modal-02" class="popup-modal slider mfp-hide">	
 
 				     	<div class="media">
-				     		<img src="imagens/portfolio/modals/m-shutterbug.jpg" alt="" />
+				     		<img src="imagens/galeria2.jpeg" alt="" />
 				     	</div>      	
 
 					   <div class="description-box">
-					      <h4>Shutterbug</h4>		      
-					      <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit.</p>
-
-					      <div class="categories">Web Design</div>			               
+					      <h4>Desenhos na navalha</h4>		      
+					      <p>Aproveite e crie um desenho no seu cabelo. Os desenhos mais diferenciados possíveis. </p>
+	               
 					   </div>
 
 			         <div class="link-box">
-			            <a href="http://www.behance.net">Details</a>
-					      <a href="#" class="popup-modal-dismiss">Close</a>
+			            <a href="#">Agende já</a>
+					      <a href="#" class="popup-modal-dismiss">Fechar</a>
 			         </div>		      
 
 				   </div> <!-- /modal-02 -->
@@ -159,19 +136,19 @@
 				   <div id="modal-03" class="popup-modal slider mfp-hide">	
 
 				     	<div class="media">
-				     		<img src="imagens/portfolio/modals/m-clouds.jpg" alt="" />
+				     		<img src="imagens/galeria3.jpeg" alt="" />
 				     	</div>      	
 
 					   <div class="description-box">
-					      <h4>Clouds</h4>		      
+					      <h4>Penteados</h4>		      
 					      <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit.</p>
 
 					      <div class="categories">Web Design</div>			               
 					   </div>
 
 			         <div class="link-box">
-			            <a href="http://www.behance.net">Details</a>
-					      <a href="#" class="popup-modal-dismiss">Close</a>
+			            <a href="#">Agende já</a>
+					      <a href="#" class="popup-modal-dismiss">Fechar</a>
 			         </div>		      
 
 				   </div> <!-- /modal-03 -->
@@ -179,19 +156,19 @@
 				   <div id="modal-04" class="popup-modal slider mfp-hide">	
 
 				     	<div class="media">
-				     		<img src="imagens/portfolio/modals/m-beetle.jpg" alt="" />
+				     		<img src="imagens/galeria4.jpeg" alt="" />
 				     	</div>      	
 
 					   <div class="description-box">
-					      <h4>Beetle</h4>		      
+					      <h4>Cortes com spray colorido</h4>		      
 					      <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit.</p>
 
 					      <div class="categories">Branding</div>			               
 					   </div>
 
 			         <div class="link-box">
-			            <a href="http://www.behance.net">Details</a>
-					      <a href="#" class="popup-modal-dismiss">Close</a>
+			            <a href="#">Agende já</a>
+					      <a href="#" class="popup-modal-dismiss">Fechar</a>
 			         </div>		      
 
 				   </div> <!-- /modal-04 -->
@@ -199,19 +176,19 @@
 				   <div id="modal-05" class="popup-modal slider mfp-hide">	
 
 				     	<div class="media">
-				     		<img src="imagens/portfolio/modals/m-lighthouse.jpg" alt="" />
+				     		<img src="imagens/galeria6.jpeg" alt="" />
 				     	</div>      	
 
 					   <div class="description-box">
-					      <h4>Lighthouse</h4>		      
+					      <h4>Degradê com risquinha</h4>		      
 					      <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit.</p>
 
 					      <div class="categories">Web Development</div>			               
 					   </div>
 
 			         <div class="link-box">
-			            <a href="http://www.behance.net">Details</a>
-					      <a href="#" class="popup-modal-dismiss">Close</a>
+			            <a href="#">Agende já</a>
+					      <a href="#" class="popup-modal-dismiss">Fechar</a>
 			         </div>		      
 
 				   </div> <!-- /modal-05 -->
@@ -219,19 +196,19 @@
 				   <div id="modal-06" class="popup-modal slider mfp-hide">	
 
 				     	<div class="media">
-				     		<img src="imagens/portfolio/modals/m-salad.jpg" alt="" />
+				     		<img src="imagens/galeria7.jpeg" alt="" />
 				     	</div>      	
 
 					   <div class="description-box">
-					      <h4>Salad</h4>		      
+					      <h4>Barbas</h4>		      
 					      <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit.</p>
 
 					      <div class="categories">Branding</div>			               
 					   </div>
 
 			         <div class="link-box">
-			            <a href="http://www.behance.net">Details</a>
-					      <a href="#" class="popup-modal-dismiss">Close</a>
+			            <a href="#">Agende já</a>
+					      <a href="#" class="popup-modal-dismiss">Fechar</a>
 			         </div>		      
 
 				   </div> <!-- /modal-06 -->
