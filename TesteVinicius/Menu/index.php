@@ -10,6 +10,8 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Arimo:wght@700&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
   <!--<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>-->
   <script src="./menu.js"></script>
   <link rel="stylesheet" href="./menu.css">
@@ -17,6 +19,7 @@
   <link rel="stylesheet" href="servicos.css">
   <link rel="stylesheet" href="port.css">
   <link rel="stylesheet" href="share.css">
+  <link rel="stylesheet" href="form.scss">
 
     <!--Portifólio-->
   <link rel="stylesheet" href="css/base.css">  
@@ -43,7 +46,8 @@
         $("#sobre").load('sobre.php');
         $("#servicos").load('servicos.php');
         $("#port").load('port.php');
-        $("share").load('share.php');
+        $("#form").load('form.php');
+        $("#share").load('share.php');
     }
 </script>
 
@@ -52,8 +56,9 @@
     <div id="menu"></div>
     <div id="carrousel"></div>
     <div id="sobre"></div></br></br></br>
-    <div id="servicos"></div>
+    <div id="servicos"></div></br>
     <div id="port"></div>
+    <div id="form"></div>
     <div id="share"></div>
 
 </body>

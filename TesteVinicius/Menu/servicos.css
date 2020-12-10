@@ -1,5 +1,8 @@
 .fundo {
-    background-color: rgb(236, 236, 236);
+    background-color: rgb(235, 235, 235);
+    width: 100%;
+    height: 550px;
+    
 }
 
 .pers {
@@ -29,7 +32,7 @@
 .serviceBox:before,
 .serviceBox:after{
     content: "";
-    background: linear-gradient(to top,#008d86,#01a2a6);
+    background: linear-gradient(to top,#000000,#252525);
     width: 10px;
     border-radius: 0 100px 100px 0;
     position: absolute;
@@ -44,7 +47,7 @@
 }
 .serviceBox .service-icon{
     color: #fff;
-    background: linear-gradient(-45deg,#008d86 49%,#01a2a6 50%);
+    background: linear-gradient(-45deg,#000000 49%,#252525 50%);
     font-size: 45px;
     line-height: 92px;
     width: 120px;
@@ -61,7 +64,7 @@
     transition: all 0.3s;
 }
 .serviceBox .title{
-    color: #008d86;
+    color: #000000;
     font-size: 17px;
     font-weight: 600;
     text-transform: uppercase;
@@ -74,17 +77,17 @@
     margin: 0;
 }
 .serviceBox.pink:before,
-.serviceBox.pink:after{ background: linear-gradient(to top,#f53985 49%,#fd47a4); }
-.serviceBox.pink .service-icon{ background:linear-gradient(-45deg,#f53985 49%,#fd47a4 50%); }
-.serviceBox.pink .title{ color: #f53985; }
+.serviceBox.pink:after{ background: linear-gradient(to top,#000000 49%,#252525); }
+.serviceBox.pink .service-icon{ background:linear-gradient(-45deg,#000000 49%,#252525 50%); }
+.serviceBox.pink .title{ color: #000000; }
 .serviceBox.purple:before,
-.serviceBox.purple:after{ background: linear-gradient(to top,#8b33cc 49%,#a23adc); }
-.serviceBox.purple .service-icon{ background:linear-gradient(-45deg,#8b33cc 49%,#a23adc 50%); }
-.serviceBox.purple .title{ color: #8b33cc; }
+.serviceBox.purple:after{ background: linear-gradient(to top,#000000 49%,#252525); }
+.serviceBox.purple .service-icon{ background:linear-gradient(-45deg,#000000 49%,#252525 50%); }
+.serviceBox.purple .title{ color: #000000; }
 .serviceBox.blue:before,
-.serviceBox.blue:after{ background: linear-gradient(to top,#038bec 49%,#01aeee); }
-.serviceBox.blue .service-icon{ background:linear-gradient(-45deg,#038bec 49%,#01aeee 50%); }
-.serviceBox.blue .title{ color: #038bec; }
+.serviceBox.blue:after{ background: linear-gradient(to top,#000000 49%,#252525); }
+.serviceBox.blue .service-icon{ background:linear-gradient(-45deg,#000000 49%,#252525 50%); }
+.serviceBox.blue .title{ color: #000000; }
 @media only screen and (max-width:990px){
     .serviceBox{ margin: 20px 0 50px; }
 }
