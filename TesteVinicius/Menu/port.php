@@ -3,11 +3,14 @@
 		<div class="row section-intro">
    		<div class="col-twelve">
 
-   			<h5>Portfolio</h5>
-   			<h1>Dê uma olhada nos nossos cortes</h1>
+			   <h1>Portfolio</h1>
+			   <br/>
+   			<h4>Dê uma olhada nos nossos cortes</h4>
 
    		</div>   		
-   	</div> <!-- /section-intro--> 
+	   </div> <!-- /section-intro--> 
+	   
+	   <br/>
 
    	<div class="row portfolio-content">
 

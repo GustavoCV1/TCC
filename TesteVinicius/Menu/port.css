@@ -15,9 +15,12 @@ a:hover, a:focus, a:active {
 
 
 #portfolio {
-	background: #FFFFFF;
-	padding-top: 12rem;
-	padding-bottom: 12rem;
+	background: black;
+	color:white;
+	padding-top: 8rem;
+	padding-bottom: 8rem;
+	text-transform: uppercase;
+	line-height: 40px;
 }
 #portfolio .folio-item {
 	padding: 0;
