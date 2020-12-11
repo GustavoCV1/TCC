@@ -1,9 +1,11 @@
 <div class="fundo">
+    <br/>
 <div class="row text-center">
     <h1 class="pers">Serviços</h1><br/>
 </div>
 <div class="container">
         <div class="row">
+            <br/>
             <div class="col-md-3 col-sm-6">
                 <div class="serviceBox">
                     <div class="service-icon">
@@ -41,6 +43,8 @@
                 </div>
             </div>
         </div>
+        <br/>
+        <br/>
     </div>
 </div>   
     

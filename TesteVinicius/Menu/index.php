@@ -58,8 +58,8 @@
 
     <div id="menu"></div>
     <div id="carrousel"></div>
-    <div id="sobre"></div><br/><br/><br/>
-    <div id="servicos"></div><br/>
+    <div id="sobre"></div>
+    <div id="servicos"></div>
     <div id="port"></div>
     <div id="form"></div>
     <div id="share"></div>
