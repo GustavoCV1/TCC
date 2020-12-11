@@ -8,11 +8,11 @@
     </li>
 
     <li class="instagram">
-      <button class="border"><i class="fa fa-instagram"></i></button>
+      <a href=""> <button class="border"><i class="fa fa-instagram"></i></button> </a>
     </li>
     
     <li class="whatsapp">
-      <button class="border"><i class="fa fa-whatsapp"></i></button>
+      <a href=""> <button class="border"><i class="fa fa-whatsapp"></i></button> </a>
     </li>
   </ul>
 </div>
