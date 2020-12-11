@@ -22,8 +22,10 @@ a:hover, a:focus, a:active {
 	text-transform: uppercase;
 	line-height: 40px;
 }
-#portfolio .folio-item {
-	padding: 0;
+#portfolio .folio-item { /* EU MUDEI ESSA PARTE RAPIDÃO PRA FICAR MAIS ESTÉTICO - Italo */
+	padding: 30px; /* Margem entre imagens */
+    height:540px;
+    width:536px;
 	position: relative;
 	overflow: hidden;
 }
