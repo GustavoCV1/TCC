@@ -121,7 +121,7 @@ a:hover, a:focus, a:active {
  * ------------------------------------------------------------------
  */
 .popup-modal {
-	max-width: 550px;
+	max-width: 450px;
 	background: #FFFFFF;
 	position: relative;
 	margin: 0 auto;

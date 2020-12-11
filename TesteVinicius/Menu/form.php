@@ -1,4 +1,7 @@
-<h2><center> Entre em contato: </center></h2><br/><br/>
+<br/>
+<br/>
+
+<h2 class="title"><center> Entre em contato: </center></h2><br/><br/>
 <div class = "row about">
     <div class = "col-xs-6">
         <form id="contact-form" role="form" method="POST" action="Contato.controller.php">
