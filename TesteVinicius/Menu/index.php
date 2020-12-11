@@ -20,8 +20,7 @@
   <link rel="stylesheet" href="servicos.css">
   <link rel="stylesheet" href="port.css">
   <link rel="stylesheet" href="share.css">
-  <link rel="stylesheet" href="form.scss">
-  <link rel="stylesheet" href="footer.css">
+  <link rel="stylesheet" href="form.css">
 
     <!--Portifólio-->
   <link rel="stylesheet" href="css/base.css">  
@@ -50,7 +49,6 @@
         $("#port").load('port.php');
         $("#form").load('form.php');
         $("#share").load('share.php');
-        $("#footer").load('footer.php');
     }
 </script>
 
@@ -63,7 +61,6 @@
     <div id="port"></div>
     <div id="form"></div>
     <div id="share"></div>
-    <div id="footer"></div>
 
 </body>
 </html>
