@@ -88,11 +88,11 @@
 
 /** dribbble **/
 
-.dribbble {
+.whatsapp {
   size: 70px;
 }
 
-.dribbble .border {
+.whatsapp .border {
   background: transparent;
   outline: none;
   color:rgba(255,255,255, 0.3);
@@ -105,15 +105,15 @@
   transition: all .2s ease-in-out;
 }
 
-.dribbble .border:hover {
+.whatsapp .border:hover {
   background: #006d00;
   border-color: #008500;
   color: rgba(255,255,255, 0.9);
   transform: scale(1.2);
 }
 
-.fa.fa-dribbble {
-  size: 100px;
+.fa.fa-whatsapp {
+  font-size: 25px;
 }
 
 #social ul li {

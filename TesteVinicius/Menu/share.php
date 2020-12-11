@@ -11,7 +11,7 @@
       <button class="border"><i class="fa fa-instagram"></i></button>
     </li>
     
-    <li class="dribbble">
+    <li class="whatsapp">
       <button class="border"><i class="fa fa-whatsapp"></i></button>
     </li>
   </ul>
