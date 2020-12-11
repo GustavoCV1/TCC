@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" >
 <head>
   <meta charset="UTF-8">
   <title> Barbearia Xavier</title>
@@ -16,6 +16,7 @@
   <script src="./menu.js"></script>
   <link rel="stylesheet" href="./menu.css">
   <link rel="stylesheet" href="./sobre.css">
+  <link rel="stylesheet" href="index.css">
   <link rel="stylesheet" href="servicos.css">
   <link rel="stylesheet" href="port.css">
   <link rel="stylesheet" href="share.css">
@@ -57,8 +58,8 @@
 
     <div id="menu"></div>
     <div id="carrousel"></div>
-    <div id="sobre"></div></br></br></br>
-    <div id="servicos"></div></br>
+    <div id="sobre"></div><br/><br/><br/>
+    <div id="servicos"></div><br/>
     <div id="port"></div>
     <div id="form"></div>
     <div id="share"></div>
