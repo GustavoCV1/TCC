@@ -28,13 +28,13 @@
         <div class="panel panel-info" >
             <div class="panel-heading">
                 <div class="panel-title">Login</div>
-                <div style="float:right; font-size: 80%; position: relative; top:-10px; margin-left:20px;"><a href="index.php">Voltar para a página inicial</a></div>
-                <div style="float:right; font-size: 80%; position: relative; top:-10px"><a href="recovery.php">Esqueceu a senha?</a></div>
+                <div style="float:right; font-size: 90%; position: relative; top:-10px; margin-left:20px;"><a href="index.php">Voltar para a página inicial</a></div>
+                <div style="float:right; font-size: 90%; position: relative; top:-10px"><a href="recovery.php">Esqueceu a senha?</a></div>
             </div>     
 
             <div style="padding-top:30px" class="panel-body" >
                 <div style="display:none" id="login-alert" class="alert alert-danger col-sm-12"></div>     
-            <form id="loginform" class="form-horizontal" role="form" method="POST" action="">
+            <form id="loginform" class="form-horizontal" role="form" method="POST" action="<?php echo htmlspecialchars("loginprocess.php")?>">
                                     
                 <div style="margin-bottom: 25px" class="input-group">
                     <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
@@ -49,7 +49,7 @@
                 <div style="margin-top:10px" class="form-group">
                 <!-- Button -->
                     <div class="col-sm-12 controls">
-                        <input type="submit" id="btn-login" class="btn btn-success" value="Entrar"></input>
+                        <input type="submit" id="btn-login" class="btn btn-success" value="Entrar"/>
                     </div>
                 </div>
 
@@ -73,10 +73,10 @@
     <div class="panel panel-info">
         <div class="panel-heading">
             <div class="panel-title">Criar Conta</div>
-            <div style="float:right; font-size: 85%; position: relative; top:-10px"><a id="signinlink" href="#" onclick="$('#signupbox').hide(); $('#loginbox').show()">Voltar</a></div>
+            <div style="float:right; font-size: 90%; position: relative; top:-10px"><a id="signinlink" href="#" onclick="$('#signupbox').hide(); $('#loginbox').show()">Voltar</a></div>
         </div>  
         <div class="panel-body" >
-            <form id="signupform" class="form-horizontal" role="form" method="POST" action="">
+            <form id="signupform" class="form-horizontal" role="form" method="POST" action="<?php echo htmlspecialchars("signupprocess.php")?>">
 
                 <div id="signupalert" style="display:none" class="alert alert-danger">
                     <p>Erro:</p>
@@ -114,7 +114,7 @@
                 <div class="form-group">
                     <!-- Button -->                                        
                     <div class="col-md-offset-3 col-md-9">
-                    <input type="submit" id="btn-signup" class="btn btn-info" value="Criar Conta"></input>
+                    <input type="submit" id="btn-signup" class="btn btn-info" value="Criar Conta"/>
                     </div>
                 </div>
          

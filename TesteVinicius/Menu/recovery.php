@@ -28,12 +28,12 @@
         <div class="panel panel-info" >
             <div class="panel-heading">
                 <div class="panel-title">Recuperação de Senha</div>
-                <div style="float:right; font-size: 80%; position: relative; top:-10px; margin-left:20px;"><a href="login.php">Voltar</a></div>
+                <div style="float:right; font-size: 90%; position: relative; top:-10px; margin-left:20px;"><a href="login.php">Voltar</a></div>
             </div>     
 
             <div style="padding-top:30px" class="panel-body" >
                 <div style="display:none" id="recovery-alert" class="alert alert-danger col-sm-12"></div>     
-            <form id="recoveryform" class="form-horizontal" role="form" method="POST" action="">
+                <form id="recoveryform" class="form-horizontal" role="form" method="POST" action="<?php echo htmlspecialchars("recoveryprocess.php")?>">
                 
                 <p>Digite seu endereço de email. Enviaremos um email com a redefinição de senha.</p>
                 <div style="margin-bottom: 25px" class="input-group">
@@ -44,12 +44,13 @@
                 <div style="margin-top:10px" class="form-group">
                 <!-- Button -->
                     <div class="col-sm-12 controls">
-                        <input type="submit" id="btn-login" class="btn btn-warning" value="Confirmar"></input>
+                        <input type="submit" id="btn-login" class="btn btn-warning" value="Confirmar"/>
                     </div>
                 </div>   
             </form>     
         </div>                     
     </div>  
+</div>
 </div>
 
 </body>
