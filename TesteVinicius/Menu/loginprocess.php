@@ -16,7 +16,7 @@
         $email = stripit($_POST['email']);
         $senha = stripit($_POST['senha']);
         
-        $sql = "SELECT nome, email, senha, permissao FROM barbearia_usuario WHERE email = '$email' AND senha = '$senha';";
+        $sql = "SELECT nome, email, permissao FROM barbearia_usuario WHERE email = '$email' AND senha = '$senha';";
         
         $dados = mysqli_query($conexao, $sql) or die(mysqli_error($conexao));
         
@@ -30,7 +30,7 @@
             session_start();
             $_SESSION['usuario'] = true;
             $_SESSION['logado'] = $em;
-            setcookie("usuario", $nm, time()+60+60*2);
+            setcookie("usuario", $nm, time()+60*60);
             header("location:pagusuario.php");
         }
         
@@ -38,7 +38,7 @@
             session_start();
             $_SESSION['funcionario'] = true;
             $_SESSION['logado'] = $em;
-            setcookie("usuario", $nm, time()+60+60*2);
+            setcookie("usuario", $nm, time()+60*60);
             header("location:pagfuncionario.php");
         }
         
@@ -46,7 +46,7 @@
             session_start();
             $_SESSION['administrador'] = true;
             $_SESSION['logado'] = $em;
-            setcookie("usuario", $nm, time()+60+60*2);
+            setcookie("usuario", $nm, time()+60*60);
             header("location:pagadm.php");
         }
         

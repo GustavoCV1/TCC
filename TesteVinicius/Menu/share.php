@@ -3,7 +3,7 @@
 <div class="center">
 <div id="social">
   <ul>
-    <li class="facebook">
+    <li class="facebook" style="margin-left: 0;">
       <a href="https://www.facebook.com/Barbearia-Xavier-102209131768607" target="_blank"> <button class="border"><i class="fa fa-facebook"></i></button> </a>
     </li>
 
