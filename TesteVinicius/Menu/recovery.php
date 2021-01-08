@@ -44,7 +44,7 @@
                 <div style="margin-top:10px" class="form-group">
                 <!-- Button -->
                     <div class="col-sm-12 controls">
-                        <input type="submit" id="btn-login" class="btn btn-warning" value="Confirmar"/>
+                        <input type="submit" id="btn-recovery" name="btn-recovery" class="btn btn-warning" value="Confirmar"/>
                     </div>
                 </div>   
             </form>     

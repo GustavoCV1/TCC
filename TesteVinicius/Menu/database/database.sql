@@ -5,10 +5,10 @@ USE barbearia;
 CREATE TABLE usuario (
 	idUsuario    	INT NOT NULL auto_increment,
     nome            VARCHAR(50),
-	email      		VARCHAR(100),
+	email      		VARCHAR(100) UNIQUE,
     senha           VARCHAR(100),
     telefone        INT(15),
-    permissao		CHAR(1), -- {"U" = Usuário, "F" = Funcionário, "D" = Dono}
+    permissao		CHAR(1), -- {"U" = Usuário, "F" = Funcionário, "A" = Administrador}
     foto            VARCHAR(255),
     PRIMARY KEY (idUsuario)
 );

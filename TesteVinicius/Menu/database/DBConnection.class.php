@@ -96,24 +96,23 @@ class DBConnection{
   	$this->getCharset()		;
   }
   
-  public function query ( $sql ) {
+  public function query($sql) {
       
     $mostrarSQL = "";
     include "dbConfig.php";
-    // incluimos aqui o conteúdo do arquivo de configuração
-    if ( $mostrarSQL ){
+    if ($mostrarSQL){
       echo "<hr>".$sql."<hr>";
     }
     
-    $conexao 	= mysqli_connect	 ( $this->getHost(), $this->getUsername(), $this->getPassword() );
+    $conexao = mysqli_connect($this->getHost(), $this->getUsername(), $this->getPassword(), $this->getSchema());
     
-    if (mysqli_errno($conexao) ) 
-        die("Erro de Conexão!");
+    if (mysqli_errno($conexao)) 
+        die("Erro de Conexão! Código de erro:" mysqli_connect_error());
     
     mysqli_select_db   ( $conexao, $this->getSchema() );
     mysqli_set_charset ( $conexao, $this->getCharset() );
     
-    $resultSet 	= mysqli_query ( $conexao, $sql ) or die("Erro na Pesquisa!");
+    $resultSet 	= mysqli_query($conexao, $sql) or die("Erro na Query!");
     
     return ( $resultSet );
     

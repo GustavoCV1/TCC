@@ -18,6 +18,18 @@
   <script src="js/jquery-2.1.3.min.js"></script>
   <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
   <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+  <script>
+    
+      function mostrarSenha() {
+        var x = document.getElementById("senha");
+        if (x.type === "password") {
+            x.type = "text";
+        } else {
+            x.type = "password";
+        }
+      }
+      
+  </script>
 
 </head>
 
@@ -45,11 +57,19 @@
                     <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
                     <input id="senha" required type="password" class="form-control" name="senha" placeholder="Senha">
                 </div>
+                
+                <input type="checkbox" onclick="mostrarSenha()"> Mostrar Senha
+                
+                <?php if (isset($_GET['erro'])){ ?>
+                    <div id="erro">
+                        <p style="float:left; color:#eb4d38;"> Usuário e/ou senha inválidos </p><br/>
+                    </div>
+                <?php } ?>
 
                 <div style="margin-top:10px" class="form-group">
                 <!-- Button -->
                     <div class="col-sm-12 controls">
-                        <input type="submit" id="btn-login" class="btn btn-success" value="Entrar"/>
+                        <input type="submit" id="btn-login" name="btn-login" class="btn btn-success" value="Entrar"/>
                     </div>
                 </div>
 
@@ -110,11 +130,13 @@
                         <input type="text" class="form-control" name="telefone" placeholder="Telefone ou Celular">
                     </div>
                 </div>
+                
+                <input type="checkbox" onclick="mostrarSenha()" style="padding=8px; margin-left=10px"> Mostrar Senha
 
                 <div class="form-group">
                     <!-- Button -->                                        
                     <div class="col-md-offset-3 col-md-9">
-                    <input type="submit" id="btn-signup" class="btn btn-info" value="Criar Conta"/>
+                    <input type="submit" id="btn-signup" name="btn-signup" class="btn btn-info" value="Criar Conta"/>
                     </div>
                 </div>
          
