@@ -1,7 +1,7 @@
 <?php
 
-    include_once 'dbConfig.php';
-    include_once 'DBConnection.class.php';
+    require_once '../database/DBQuery.class.php';
+    require_once '../classes/Usuario.class.php';
 
     $email = $senha1 = $senha2 = $nome = $telefone = "";
 
@@ -25,17 +25,21 @@
         
         else {
             
-            $sql = "SELECT * FROM usuario WHERE email = '$email' OR nome = '$nome' LIMIT 1;";
+            $tableName  = "barbearia.usuario";
+            $fields     = "nome, email";
+            $keyField   = "idUsuario";
 
-            $dados = mysqli_query($conexao, $sql) or die(mysqli_error($conexao));
+            $dbquery = new DBQuery($tableName, $fields, $keyField);
+            $resultSet = $dbquery->select("email = '$email' OR nome = '$nome' LIMIT 1;");
+
             $usuario = mysqli_fetch_assoc($dados);
 
-            if ($user) { #Se um usuário de mesmo nome ou email já existir...
-                if ($user['email'] === $email) {
+            if ($usuario) { #Se um usuário de mesmo nome ou email já existir...
+                if ($usuario['email'] === $email) {
                     header("location:login.php?errocriar=Email já cadastrado!");
                 }
 
-                elseif ($user['nome'] === $nome) {
+                elseif ($usuario['nome'] === $nome) {
                     header("location:login.php?errocriar=Um usuário com o mesmo nome já existe!");
                 }
             }
@@ -43,9 +47,10 @@
             else {
                 
                 $senha1 = md5($senha1); #Senha será guardada encriptada em MD5.
+                $fields = "nome, email, senha, telefone, permissao";
                 
-                $sql = "INSERT INTO usuario (nome, email, senha, telefone, permissao) VALUES('$nome', '$email', '$senha1', '$telefone', 'U')";
-  	            $criar = mysqli_query($conexao, $sql);
+                $criar = $dbquery->insert($nome, $email, $senha1, $telefone, "U");
+                
                 session_start();
   	            $_SESSION['usuario'] = $nome;
   	            $_SESSION['logado'] = true;

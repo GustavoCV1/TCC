@@ -1,7 +1,7 @@
 <?php
 
-    include_once 'dbConfig.php';
-    include_once 'DBConnection.class.php';
+    require_once '../database/DBQuery.class.php';
+    require_once '../classes/Usuario.class.php';
 
     $email = $senha = "";
 
@@ -17,25 +17,28 @@
         $senha = stripit($_POST['senha']);
         $senha = md5($senha); #Encripta a senha antes da verificação, para segurança extra.
         
-        $sql = "SELECT nome, email, permissao FROM barbearia_usuario WHERE email = '$email' AND senha = '$senha';";
+        $tableName  = "barbearia.usuario";
+        $fields     = "nome, email, permissao";
+        $keyField   = "idUsuario";
         
-        $dados = mysqli_query($conexao, $sql) or die(mysqli_error($conexao));
+        $dbquery = new DBQuery($tableName, $fields, $keyField);
+        $resultSet = $dbquery->select("email = '$email' AND senha = '$senha' LIMIT 1;");
         
-        while ($linha = mysqli_fetch_assoc($dados)) {
+        while ($linha = mysqli_fetch_assoc($resultSet)) {
             $nm = $linha["nome"];
             $em = $linha["email"];
             $perm = $linha["permissao"];
         }
 
-        if (mysqli_num_rows($dados)==1 && $perm =='U') {
+        if (mysqli_num_rows($resultSet)==1 && $perm =='U') {
             session_start();
             $_SESSION['usuario'] = $nm;
             $_SESSION['logado'] = true;
-            setcookie("usuario", $nm, time()+60*60);
+            setcookie("usuario", $nm, time()+60*60); #Não usar nome de cookie como única verificação, qualquer um pode mudar! Usar em preenchimento automático e etc. Ao deslogar, "logado" = false, mas o cookie permanece até expirar para preenchimentos e etc.
             header("location:pagusuario.php");
         }
         
-        elseif (mysqli_num_rows($dados)==1 && $perm =='F') {
+        elseif (mysqli_num_rows($resultSet)==1 && $perm =='F') {
             session_start();
             $_SESSION['funcionario'] = $nm;
             $_SESSION['logado'] = true;
@@ -43,7 +46,7 @@
             header("location:pagfuncionario.php");
         }
         
-        elseif (mysqli_num_rows($dados)==1 && $perm =='A') {
+        elseif (mysqli_num_rows($resultSet)==1 && $perm =='A') {
             session_start();
             $_SESSION['administrador'] = $nm;
             $_SESSION['logado'] = true;

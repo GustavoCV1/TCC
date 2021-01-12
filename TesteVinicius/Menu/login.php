@@ -129,21 +129,34 @@
                 <div class="form-group">
                     <label for="senha1" class="col-md-3 control-label">Senha</label>
                     <div class="col-md-9">
-                        <input type="password" id="senha1" required class="form-control" name="senha1" placeholder="Senha">
+                        <input type="password" id="senha1" required class="form-control" name="senha1" placeholder="Senha" minlength="8">
                     </div>
                 </div>
                 
                 <div class="form-group">
                     <label for="senha2" class="col-md-3 control-label" style="font-size: 90%">Confirmar Senha</label>
                     <div class="col-md-9">
-                        <input type="password" id="senha2" required class="form-control" name="senha2" placeholder="Repita a senha">
+                        <input type="password" id="senha2" required class="form-control" name="senha2" placeholder="Repita a senha" minlength="8">
                     </div>
                 </div>
    
+                <span id="confirmar"></span>
+                <script>
+                    $('#senha1, #senha2').on('keyup', function () {
+                        if ($('#senha1').val() == $('#senha2').val()) {
+                            $('#confirmar').html('As senhas são iguais!').css('color', 'green');     
+                        }
+          
+                        else {
+                            $('#confirmar').html('As senhas não são iguais!').css('color', 'red');
+                        }
+                    });
+                </script>
+                
                 <div class="form-group">
                     <label for="nome" class="col-md-3 control-label">Nome</label>
                     <div class="col-md-9">
-                        <input type="text" required class="form-control" name="nome" placeholder="Nome">
+                        <input type="text" required class="form-control" name="nome" placeholder="Nome" minlength="5">
                     </div>
                 </div>
 
@@ -155,14 +168,6 @@
                 </div>
                 
                 <input type="checkbox" onclick="mostrarSenha()" style="padding=8px; margin-left=10px"> Mostrar Senha
-                
-                <?php if (isset($_GET['errocriar'])){ 
-                $nomerro = $_GET['errocriar'];
-                ?>
-                    <div id="erro">
-                        <p style="float:left; color:#eb4d38;"> Erro: <?php echo $nomerro; ?> </p><br/>
-                    </div>
-                <?php } ?>
 
                 <div class="form-group">
                     <!-- Button -->                                        
