@@ -23,10 +23,25 @@
     
       function mostrarSenha() {
         var x = document.getElementById("senha");
+        var y = document.getElementById("senha1");
+        var z = document.getElementById("senha2");
+        
         if (x.type === "password") {
             x.type = "text";
         } else {
             x.type = "password";
+        }
+          
+        if (y.type === "password") {
+            y.type = "text";
+        } else {
+            y.type = "password";
+        }
+          
+        if (z.type === "password") {
+            z.type = "text";
+        } else {
+            z.type = "password";
         }
       }
       
@@ -61,7 +76,7 @@
                 
                 <input type="checkbox" onclick="mostrarSenha()"> Mostrar Senha
                 
-                <?php if (isset($_GET['erro'])){ ?>
+                <?php if (isset($_GET['errologin'])){ ?>
                     <div id="erro">
                         <p style="float:left; color:#eb4d38;"> Usuário e/ou senha inválidos </p><br/>
                     </div>
@@ -112,9 +127,16 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="senha" class="col-md-3 control-label">Senha</label>
+                    <label for="senha1" class="col-md-3 control-label">Senha</label>
                     <div class="col-md-9">
-                        <input type="password" required class="form-control" name="senha" placeholder="Senha">
+                        <input type="password" id="senha1" required class="form-control" name="senha1" placeholder="Senha">
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="senha2" class="col-md-3 control-label" style="font-size: 90%">Confirmar Senha</label>
+                    <div class="col-md-9">
+                        <input type="password" id="senha2" required class="form-control" name="senha2" placeholder="Repita a senha">
                     </div>
                 </div>
    
@@ -128,11 +150,19 @@
                 <div class="form-group">
                     <label for="telefone" class="col-md-3 control-label">Telefone</label>
                     <div class="col-md-9">
-                        <input type="text" class="form-control" name="telefone" placeholder="Telefone ou Celular">
+                        <input type="tel" class="form-control" name="telefone" placeholder="Telefone ou Celular">
                     </div>
                 </div>
                 
                 <input type="checkbox" onclick="mostrarSenha()" style="padding=8px; margin-left=10px"> Mostrar Senha
+                
+                <?php if (isset($_GET['errocriar'])){ 
+                $nomerro = $_GET['errocriar'];
+                ?>
+                    <div id="erro">
+                        <p style="float:left; color:#eb4d38;"> Erro: <?php echo $nomerro; ?> </p><br/>
+                    </div>
+                <?php } ?>
 
                 <div class="form-group">
                     <!-- Button -->                                        

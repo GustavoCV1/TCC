@@ -15,6 +15,7 @@
     if ($_SERVER["REQUEST_METHOD"] == "POST" && count($_POST) > 0){
         $email = stripit($_POST['email']);
         $senha = stripit($_POST['senha']);
+        $senha = md5($senha); #Encripta a senha antes da verificação, para segurança extra.
         
         $sql = "SELECT nome, email, permissao FROM barbearia_usuario WHERE email = '$email' AND senha = '$senha';";
         
@@ -28,30 +29,30 @@
 
         if (mysqli_num_rows($dados)==1 && $perm =='U') {
             session_start();
-            $_SESSION['usuario'] = true;
-            $_SESSION['logado'] = $em;
+            $_SESSION['usuario'] = $nm;
+            $_SESSION['logado'] = true;
             setcookie("usuario", $nm, time()+60*60);
             header("location:pagusuario.php");
         }
         
         elseif (mysqli_num_rows($dados)==1 && $perm =='F') {
             session_start();
-            $_SESSION['funcionario'] = true;
-            $_SESSION['logado'] = $em;
+            $_SESSION['funcionario'] = $nm;
+            $_SESSION['logado'] = true;
             setcookie("usuario", $nm, time()+60*60);
             header("location:pagfuncionario.php");
         }
         
         elseif (mysqli_num_rows($dados)==1 && $perm =='A') {
             session_start();
-            $_SESSION['administrador'] = true;
-            $_SESSION['logado'] = $em;
+            $_SESSION['administrador'] = $nm;
+            $_SESSION['logado'] = true;
             setcookie("usuario", $nm, time()+60*60);
             header("location:pagadm.php");
         }
         
         else {
-            header("location:login.php?erro");
+            header("location:login.php?errologin");
         }
         
     }
