@@ -9,6 +9,7 @@
         $data = trim($data);
         $data = stripslashes($data);
         $data = htmlspecialchars($data);
+        $data = mysql_real_escape_string($data);
         return $data;
     }
 
@@ -32,9 +33,9 @@
             $dbquery = new DBQuery($tableName, $fields, $keyField);
             $resultSet = $dbquery->select("email = '$email' OR nome = '$nome' LIMIT 1;");
 
-            $usuario = mysqli_fetch_assoc($dados);
+            $usuario = mysqli_fetch_assoc($resultSet);
 
-            if ($usuario) { #Se um usuário de mesmo nome ou email já existir...
+            if (mysqli_num_rows($usuario) > 0) { #Se um usuário de mesmo nome ou email já existir...
                 if ($usuario['email'] === $email) {
                     header("location:login.php?errocriar=Email já cadastrado!");
                 }
@@ -46,10 +47,15 @@
 
             else {
                 
-                $senha1 = md5($senha1); #Senha será guardada encriptada em MD5.
-                $fields = "nome, email, senha, telefone, permissao";
+                $senha_hasheada = password_hash($senha1, PASSWORD_DEFAULT);
+                $fields = "nome, email, senha, telefone, permissao, chave";
                 
-                $criar = $dbquery->insert($nome, $email, $senha1, $telefone, "U");
+                $chave = md5(rand(0,1000)); // Hash de 32 caracteres aleatórios. Será usado na verificação de email.
+                // Exemplo: f4552671f8909587cf485ea990207f3b
+                
+                $criar = $dbquery->insert($nome, $email, $senha_hasheada, $telefone, "U", $chave);
+                
+                // MANDAR EMAIL DE CONFIRMAÇÃO AQUI E ADICIONAR verificar.php
                 
                 session_start();
   	            $_SESSION['usuario'] = $nome;

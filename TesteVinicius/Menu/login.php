@@ -117,7 +117,14 @@
                 <div id="signupalert" style="display:none" class="alert alert-danger">
                     <p>Erro:</p>
                     <span></span>
-                </div>   
+                </div>
+                
+                <div class="form-group">
+                    <label for="nome" class="col-md-3 control-label">Nome</label>
+                    <div class="col-md-9">
+                        <input type="text" required class="form-control" name="nome" placeholder="Nome" minlength="5">
+                    </div>
+                </div>
  
                 <div class="form-group">
                     <label for="email" class="col-md-3 control-label">Email</label>
@@ -126,6 +133,13 @@
                     </div>
                 </div>
 
+                <div class="form-group">
+                    <label for="telefone" class="col-md-3 control-label">Telefone</label>
+                    <div class="col-md-9">
+                        <input type="tel" class="form-control" name="telefone" placeholder="Telefone ou Celular">
+                    </div>
+                </div>
+                
                 <div class="form-group">
                     <label for="senha1" class="col-md-3 control-label">Senha</label>
                     <div class="col-md-9">
@@ -140,32 +154,20 @@
                     </div>
                 </div>
    
-                <span id="confirmar"></span>
+                <span id="confirmar"></span><br/>
                 <script>
                     $('#senha1, #senha2').on('keyup', function () {
                         if ($('#senha1').val() == $('#senha2').val()) {
-                            $('#confirmar').html('As senhas são iguais!').css('color', 'green');     
+                            $('#confirmar').html('As senhas são iguais!').css('color', 'green');
+                            $('#btn-signup').prop('disabled', false);
                         }
           
                         else {
                             $('#confirmar').html('As senhas não são iguais!').css('color', 'red');
+                            $('#btn-signup').prop('disabled', true);
                         }
                     });
                 </script>
-                
-                <div class="form-group">
-                    <label for="nome" class="col-md-3 control-label">Nome</label>
-                    <div class="col-md-9">
-                        <input type="text" required class="form-control" name="nome" placeholder="Nome" minlength="5">
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label for="telefone" class="col-md-3 control-label">Telefone</label>
-                    <div class="col-md-9">
-                        <input type="tel" class="form-control" name="telefone" placeholder="Telefone ou Celular">
-                    </div>
-                </div>
                 
                 <input type="checkbox" onclick="mostrarSenha()" style="padding=8px; margin-left=10px"> Mostrar Senha
 

@@ -6,10 +6,12 @@ CREATE TABLE usuario (
 	idUsuario    	INT NOT NULL auto_increment,
     nome            VARCHAR(50) NOT NULL,
 	email      		VARCHAR(100) UNIQUE NOT NULL,
-    senha           VARCHAR(100) NOT NULL,
+    senha           VARCHAR(255) NOT NULL,
     telefone        INT(15),
     permissao		CHAR(1) NOT NULL, -- {"U" = Usuário, "F" = Funcionário, "A" = Administrador}
     foto            VARCHAR(255),
+    chave           VARCHAR(32) NOT NULL ,
+    verificada      INT(1) NOT NULL DEFAULT '0',
     PRIMARY KEY (idUsuario)
 );
 

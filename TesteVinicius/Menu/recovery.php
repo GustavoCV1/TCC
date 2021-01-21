@@ -38,11 +38,11 @@
                 <p>Digite seu endereço de email. Enviaremos um email com a redefinição de senha.</p>
                 <div style="margin-bottom: 25px" class="input-group">
                     <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                    <input id="email" required type="email" class="form-control" name="email" value="" placeholder="Email">                                        
+                    <input id="email" required type="email" class="form-control" name="email" value="Email" placeholder="Email">                                        
                 </div>
 
                 <div style="margin-top:10px" class="form-group">
-                <!-- Button -->
+
                     <div class="col-sm-12 controls">
                         <input type="submit" id="btn-recovery" name="btn-recovery" class="btn btn-warning" value="Confirmar"/>
                     </div>
