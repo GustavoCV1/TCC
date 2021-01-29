@@ -23,6 +23,7 @@
   <link rel="stylesheet" href="share.css">
   <link rel="stylesheet" href="form.css">
   <link rel="stylesheet" href="footer.css">
+  <link rel="stylesheet" href="sobre.css">
 
     <!--Portifólio-->
   <link rel="stylesheet" href="css/base.css">  

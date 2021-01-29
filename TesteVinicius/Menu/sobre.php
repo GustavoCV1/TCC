@@ -33,8 +33,5 @@
     </a>
   <div>
 </section>
-<!-- partial -->
-  
-</body>
-</html>
+
 
