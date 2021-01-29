@@ -1,6 +1,9 @@
-      <div class ="deselvolvedor bg-dark" style="color: white;"> 
-        <br/>
-        <p><center> Barbearia Xavier© </center></p>
-        <p><center> Desenvolvido por Plexus Desenvolvedor Web </center></p>
-        <br/>
-      </div>
+<div id = "footer">
+    <a href="#"><button id="tothetop" type="button" class="btn btn-light" title="Voltar ao Topo">☝️</button></a>
+    <p>Barbearia Xavier©</p>
+    <p>Desenvolvido por Plexus Desenvolvedor Web</p>
+    <br/>
+    <br/>
+
+
+</div>
