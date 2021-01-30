@@ -34,3 +34,6 @@ CREATE TABLE atendimento (
     FOREIGN KEY (barbeiro) REFERENCES usuario(idUsuario),
     FOREIGN KEY (servico) REFERENCES servico(idServico)
 );
+
+INSERT INTO usuario (nome, email, senha, permissao) 
+	VALUES ("Administração", "italorlui@gmail.com", "$2y$10$tEp24z199iKMgfn.NfdnWe3fnSdw8W1IztZG9W8l2jXMlaIzBoj9m", "A");

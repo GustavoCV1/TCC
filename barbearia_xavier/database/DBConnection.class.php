@@ -1,7 +1,5 @@
 <?php
 
-namespace database;
-
 class DBConnection{
   
   private $host;
@@ -20,7 +18,7 @@ class DBConnection{
     $databaseSchema = "";
     $databaseCharset= "";
       
-    include "dbConfig.php";
+    require_once $_SERVER['DOCUMENT_ROOT'] . '/barbearia_xavier/database/dbConfig.php';
     
 	$this->setHost		( $databaseHost );
 	$this->setUsername	( $databaseUser );
@@ -87,27 +85,16 @@ class DBConnection{
 	$this->connection = $connection;
   }
   
-  public function toString() {
-    echo $this->getHost()			." | ".
-  	$this->getUsername()		." | ".
-  	$this->getPort()			." | ".
-  	$this->getPassword()		." | ".
-  	$this->getSchema()			." | ".
-  	$this->getCharset()		;
-  }
-  
   public function query($sql) {
       
     $mostrarSQL = "";
-    include "dbConfig.php";
-    if ($mostrarSQL){
-      echo "<hr>".$sql."<hr>";
-    }
+    require_once $_SERVER['DOCUMENT_ROOT'] . '/barbearia_xavier/database/dbConfig.php';
     
     $conexao = mysqli_connect($this->getHost(), $this->getUsername(), $this->getPassword(), $this->getSchema());
     
-    if (mysqli_errno($conexao)) 
-        die("Erro de Conexão! Código de erro:" mysqli_connect_error());
+    if (mysqli_errno($conexao)) {
+        die("Erro de Conexão! Código de erro:" . mysqli_connect_error());
+    }
     
     mysqli_select_db   ( $conexao, $this->getSchema() );
     mysqli_set_charset ( $conexao, $this->getCharset() );

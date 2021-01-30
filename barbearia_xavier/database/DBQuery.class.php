@@ -1,8 +1,6 @@
 <?php
 
-namespace database;
-
-require_once '../database/DBConnection.class.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/barbearia_xavier/database/DBConnection.class.php';
 
 class DBQuery {
 	

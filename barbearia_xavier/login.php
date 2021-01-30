@@ -15,14 +15,12 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 
-  <link rel="stylesheet" href="login.css">
-
   <script>
     
       function mostrarSenha() {
-        var x = document.getElementById("senha");
-        var y = document.getElementById("senha1");
-        var z = document.getElementById("senha2");
+        var x = document.getElementById("pass");
+        var y = document.getElementById("regpass");
+        var z = document.getElementById("reregpass");
         
         if (x.type === "password") {
             x.type = "text";
@@ -43,36 +41,62 @@
         }
       }
       
+      $('#regpass, #reregpass').on('keyup', function () {
+        if ($('#regpass').val() == $('#reregpass').val()) {
+            $('#verificar').html('As senhas são iguais!').css('color', 'green');     
+            $('#verificar').html('As senhas são iguais!').css('color', 'green');
+            $('#btn-signup').prop('disabled', false);
+        }
+          
+        else {
+            $('#verificar').html('As senhas não são iguais!').css('color', 'red');
+            $('#btn-signup').prop('disabled', true);
+        }
+    });
+      
   </script>
 
 </head>
 
 <body>
 <!-- partial:index.partial.html -->
+    
+<?php session_start(); ?>
 <div class="materialContainer">
-
 
    <div class="box">
 
       <div class="title">ENTRAR</div>
+       
+      <?php 
+        $mensagem = $_SESSION["mensagem"];
+        echo "<span style='color:red; margin-bottom:5px; font-size:15px;'>Erro: ".$mensagem."</span>";  ?>
+       
+      <form id="loginform" role="form" method="POST" action="<?php echo htmlspecialchars("loginprocess.php")?>">
 
-      <div class="input">
-         <label for="name">Usuário</label>
-         <input type="text" name="name" id="name">
-         <span class="spin"></span>
-      </div>
+          <div class="input">
+             <label for="name">Usuário (Email)</label>
+             <input type="email" name="name" id="name" minlength="5">
+             <span class="spin"></span>
+          </div>
 
-      <div class="input">
-         <label for="pass">Senha</label>
-         <input type="password" name="pass" id="pass">
-         <span class="spin"></span>
-      </div>
+          <div class="input">
+             <label for="pass">Senha</label>
+             <input type="password" name="pass" id="pass" minlength="5">
+             <span class="spin"></span>
+          </div>
+          
+          <div class="input">
+             <label for="mostrar" style="font-size: 99%; color:grey; text-decoration:underline;" onclick="mostrarSenha();">Mostrar Senha</label>
+          </div>
 
-      <div class="button login">
-         <button><span>Entrar</span> <i class="fa fa-check"></i></button>
-      </div>
+          <div class="button login">
+             <button type="submit" id="btn-login"><span>Entrar</span> <i class="fa fa-check"></i></button>
+          </div>
+           
+      </form>
 
-      <a href="" class="pass-forgot">Esqueceu sua senha?</a>
+      <a href="recovery.php" class="pass-forgot">Esqueceu sua senha?</a>
 
    </div>
 
@@ -80,29 +104,40 @@
       <div class="material-button alt-2"><span class="shape"></span></div>
 
       <div class="title">REGISTRAR</div>
+       
+      <?php echo "<span id='verificar' style='margin-bottom:5px; font-size:20px;'></span>";  ?>
+       
+      <form id="signupform" role="form" method="POST" action="<?php echo htmlspecialchars("signupprocess.php")?>">
+        
+          <div class="input">
+             <label for="regname">Usuário (Email)</label>
+             <input type="email" name="regname" id="regname" minlength="5">
+             <span class="spin"></span>
+          </div>
 
-      <div class="input">
-         <label for="regname">Usuário</label>
-         <input type="text" name="regname" id="regname">
-         <span class="spin"></span>
-      </div>
+          <div class="input">
+             <label for="regpass">Senha</label>
+             <input type="password" name="regpass" id="regpass" minlength="5">
+             <span class="spin"></span>
+          </div>
 
-      <div class="input">
-         <label for="regpass">Senha</label>
-         <input type="password" name="regpass" id="regpass">
-         <span class="spin"></span>
-      </div>
+          <div class="input">
+             <label for="reregpass">Repetir a senha</label>
+             <input type="password" name="reregpass" id="reregpass" minlength="5">
+             <span class="spin"></span>
+          </div>
 
-      <div class="input">
-         <label for="reregpass">Repetir a senha</label>
-         <input type="password" name="reregpass" id="reregpass">
-         <span class="spin"></span>
-      </div>
+          <div class="input">
+             <label for="reguser">Nome</label>
+             <input type="text" name="reguser" id="reguser" minlength="5">
+             <span class="spin"></span>
+          </div>
 
-      <div class="button">
-         <button><span>Próximo</span></button>
-      </div>
-
+          <div class="button">
+             <button type="submit" id="btn-signup"><span>Criar Conta</span></button>
+          </div> 
+          
+      </form>
 
    </div>
 

@@ -1,19 +1,13 @@
 <?php
 
-namespace classes;
-
-use classes\UsuarioDAO;
-use database\DBQuery;
-
-
-require_once '../classes/UsuarioDAO.class.php';
-require_once '../database/DBQuery.class.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/barbearia_xavier/classes/UsuarioDAO.class.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/barbearia_xavier/database/DBQuery.class.php';
 
 
 class Usuario{
     
     private $idUsuario;
-    private $nome
+    private $nome;
     private $email;
     private $senha;
     private $telefone;

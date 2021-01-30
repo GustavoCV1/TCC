@@ -1,11 +1,7 @@
 <?php
 
-namespace classes;
-
-use database\DBQuery;
-
-require_once '../database/DBQuery.class.php';
-require_once '../classes/Servico.class.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/barbearia_xavier/database/DBQuery.class.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/barbearia_xavier/classes/Servico.class.php';
 
 class ServicoDAO {
     
