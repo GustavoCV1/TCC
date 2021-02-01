@@ -68,11 +68,11 @@
 
       <div class="title">ENTRAR</div>
        
-      <?php 
-        $mensagem = $_SESSION["mensagem"];
-        echo "<span style='color:red; margin-bottom:5px; font-size:15px;'>Erro: ".$mensagem."</span>";  ?>
-       
-      <form id="loginform" role="form" method="POST" action="<?php echo htmlspecialchars("loginprocess.php")?>">
+      <?php if (!empty($_SESSION['mensagem'])) {
+                $mensagem = $_SESSION["mensagem"];
+                echo "<span style='color:red; margin-bottom:5px; font-size:15px;'>Erro: ".$mensagem."</span>"; }  ?>
+
+       <form id="loginform" role="form" method="POST" action="<?php echo htmlspecialchars("loginprocess.php")?>">
 
           <div class="input">
              <label for="name">Usuário (Email)</label>
