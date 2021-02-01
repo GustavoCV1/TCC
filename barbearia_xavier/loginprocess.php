@@ -27,6 +27,7 @@
         if (mysqli_num_rows($resultSet) == 0) {
             $_SESSION['mensagem'] = "Usuário/email incorreto!";
             header("location:login.php");
+            exit();
         }
         
         while ($linha = mysqli_fetch_assoc($resultSet)) {
@@ -38,25 +39,27 @@
         
         if (password_verify($senha, $senha_hasheada)) {
             
-            $_SESSION['mensagem'] = "Você está logado!";
             $_SESSION['logado'] = true;
             
             if (mysqli_num_rows($resultSet)==1 && $perm =='U') {
                 $_SESSION['usuario'] = $nm;
                 setcookie("usuario", $nm, time()+60*60*1000); #Não usar nome de cookie como única verificação, qualquer um pode mudar! Usar em preenchimento automático e etc. Ao deslogar, "logado" = false, mas o cookie permanece até expirar para preenchimentos e etc.
                 header("location:pagusuario.php");
+                exit();
             }
         
             elseif (mysqli_num_rows($resultSet)==1 && $perm =='F') {
                 $_SESSION['funcionario'] = $nm;
                 setcookie("usuario", $nm, time()+60*60*1000);
                 header("location:pagfuncionario.php");
+                exit();
             }
 
             elseif (mysqli_num_rows($resultSet)==1 && $perm =='A') {
                 $_SESSION['administrador'] = $nm;
                 setcookie("usuario", $nm, time()+60*60*1000);
                 header("location:pagadm.php");
+                exit();
             }
 
         }
@@ -64,6 +67,7 @@
         else {
             $_SESSION['mensagem'] = "Senha incorreta!";
             header("location:login.php");
+            exit();
         }
         
     }

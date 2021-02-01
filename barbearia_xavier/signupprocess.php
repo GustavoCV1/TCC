@@ -24,13 +24,13 @@
         $fields     = "nome, email";
         $keyField   = "idUsuario";
 
-        $dbquery = new DBQuery($tableName, $fields, $keyField);
-        $resultSet = $dbquery->select("email = '$email' OR nome = '$nome' LIMIT 1;");
+        $dbquery1 = new DBQuery($tableName, $fields, $keyField);
+        $resultSet = $dbquery1->select("email = '$email' OR nome = '$nome' LIMIT 1;");
 
         $usuario = mysqli_fetch_assoc($resultSet);
-        $ok = empty($usuario);
+        $ok = !empty($usuario);
 
-        if ($ok == FALSE) { #Se um usuário de mesmo nome ou email já existir...
+        if ($ok == TRUE) { #Se um usuário de mesmo nome ou email já existir...
             if ($usuario['email'] === $email) {
                 $_SESSION['mensagem'] = "Um usuário com o mesmo email já existe!";
             }
@@ -40,6 +40,7 @@
             }
             
             header("location:login.php");
+            exit();
             
         }
 
@@ -50,8 +51,9 @@
                 
             $chave = md5(rand(0,1000)); // Hash de 32 caracteres aleatórios. Será usado na verificação de email.
             // Exemplo: f4552671f8909587cf485ea990207f3b
-                
-            $criar = $dbquery->insert($nome, $email, $senha_hasheada, "U", $chave);
+            
+            $dbquery2 = new DBQuery($tableName, $fields, $keyField);
+            $criar = $dbquery2->insert($nome, $email, $senha_hasheada, "U", $chave);
                 
             // MANDAR EMAIL DE CONFIRMAÇÃO AQUI E ADICIONAR verificar.php
 
@@ -59,6 +61,7 @@
   	         $_SESSION['logado'] = true;
              setcookie("usuario", $nome, time()+60*60*1000);
   	         header("location:pagusuario.php");
+             exit();
                 
         }   
             
