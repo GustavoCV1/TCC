@@ -42,7 +42,7 @@
     grid-column-gap: var(--spacing-l);
     grid-row-gap: var(--spacing-l);
     max-width: var(--width-container);
-    width: 100%;
+    width: 60%;
   }
   
   @media(min-width: 540px){

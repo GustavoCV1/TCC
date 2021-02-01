@@ -1,5 +1,5 @@
 <div id = "footer">
-    <a href="#"><button id="tothetop" type="button" class="btn btn-light" title="Voltar ao Topo">☝️</button></a>
+    <a href="#"><button id="tothetop" type="button" title="Voltar ao Topo"><img class="seta" src="imagens/setinha.png"></button></a>
     <p>Barbearia Xavier©</p>
     <p>Desenvolvido por Plexus Desenvolvedor Web</p>
     <br/>
