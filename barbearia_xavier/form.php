@@ -71,7 +71,7 @@
 						</span>
 
 						<span class="txt2">
-							Rua Sardes,7
+							Rua Sardes, 7
 						</span>
 					</div>
 				</div>

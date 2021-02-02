@@ -68,21 +68,21 @@
 
       <div class="title">ENTRAR</div>
        
-      <?php if (!empty($_SESSION['mensagem'])) {
-                $mensagem = $_SESSION["mensagem"];
+      <?php if (!empty($_SESSION['mensagemlogin'])) {
+                $mensagem = $_SESSION["mensagemlogin"];
                 echo "<span style='color:red; margin-bottom:5px; font-size:15px;'>Erro: ".$mensagem."</span>"; }  ?>
 
        <form id="loginform" role="form" method="POST" action="<?php echo htmlspecialchars("loginprocess.php")?>">
 
           <div class="input">
              <label for="name">Usuário (Email)</label>
-             <input type="email" name="name" id="name" minlength="5">
+             <input type="email" name="name" id="name" minlength="5" required>
              <span class="spin"></span>
           </div>
 
           <div class="input">
              <label for="pass">Senha</label>
-             <input type="password" name="pass" id="pass" minlength="5">
+             <input type="password" name="pass" id="pass" minlength="5" required>
              <span class="spin"></span>
           </div>
           
@@ -111,25 +111,25 @@
         
           <div class="input">
              <label for="regname">Usuário (Email)</label>
-             <input type="email" name="regname" id="regname" minlength="5">
+             <input type="email" name="regname" id="regname" minlength="5" required>
              <span class="spin"></span>
           </div>
 
           <div class="input">
              <label for="regpass">Senha</label>
-             <input type="password" name="regpass" id="regpass" minlength="5">
+             <input type="password" name="regpass" id="regpass" minlength="5" required>
              <span class="spin"></span>
           </div>
 
           <div class="input">
              <label for="reregpass">Repetir a senha</label>
-             <input type="password" name="reregpass" id="reregpass" minlength="5">
+             <input type="password" name="reregpass" id="reregpass" minlength="5" required>
              <span class="spin"></span>
           </div>
 
           <div class="input">
              <label for="reguser">Nome</label>
-             <input type="text" name="reguser" id="reguser" minlength="5">
+             <input type="text" name="reguser" id="reguser" minlength="5" required>
              <span class="spin"></span>
           </div>
 

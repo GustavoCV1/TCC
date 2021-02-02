@@ -25,7 +25,7 @@
         $resultSet = $dbquery->select("email = '$email' LIMIT 1;");
         
         if (mysqli_num_rows($resultSet) == 0) {
-            $_SESSION['mensagem'] = "Usuário/email incorreto!";
+            $_SESSION['mensagemlogin'] = "Usuário/email incorreto!";
             header("location:login.php");
             exit();
         }
@@ -65,7 +65,7 @@
         }
         
         else {
-            $_SESSION['mensagem'] = "Senha incorreta!";
+            $_SESSION['mensagemlogin'] = "Senha incorreta!";
             header("location:login.php");
             exit();
         }

@@ -28,15 +28,15 @@
         $resultSet = $dbquery1->select("email = '$email' OR nome = '$nome' LIMIT 1;");
 
         $usuario = mysqli_fetch_assoc($resultSet);
-        $ok = !empty($usuario);
+        $full = !empty($usuario);
 
-        if ($ok == TRUE) { #Se um usuário de mesmo nome ou email já existir...
+        if ($full == TRUE) { #Se um usuário de mesmo nome ou email já existir...
             if ($usuario['email'] === $email) {
-                $_SESSION['mensagem'] = "Um usuário com o mesmo email já existe!";
+                $_SESSION['mensagemlogin'] = "Um usuário com o mesmo email já existe!";
             }
 
             elseif ($usuario['nome'] === $nome) {
-                $_SESSION['mensagem'] = "Um usuário com o mesmo nome já existe!";
+                $_SESSION['mensagemlogin'] = "Um usuário com o mesmo nome já existe!";
             }
             
             header("location:login.php");
@@ -47,7 +47,9 @@
         else {
                 
             $senha_hasheada = password_hash($senha1, PASSWORD_DEFAULT);
-            $fields = "nome, email, senha, permissao, chave";
+            $tableName  = "barbearia.usuario";
+            $fields     = "nome, email, senha, permissao, chave";
+            $keyField   = "idUsuario";
                 
             $chave = md5(rand(0,1000)); // Hash de 32 caracteres aleatórios. Será usado na verificação de email.
             // Exemplo: f4552671f8909587cf485ea990207f3b
