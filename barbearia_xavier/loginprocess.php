@@ -18,7 +18,7 @@
         $senha = stripit($_POST['pass']);
         
         $tableName  = "barbearia.usuario";
-        $fields     = "nome, email, senha, permissao";
+        $fields     = "nome, email, senha, permissao, verificada";
         $keyField   = "idUsuario";
         
         $dbquery = new DBQuery($tableName, $fields, $keyField);
@@ -35,6 +35,13 @@
             $em = $linha["email"];
             $senha_hasheada = $linha["senha"];
             $perm = $linha["permissao"];
+            $verificada = $linha["verificada"];
+        }
+
+        if ($verificada = 0){
+            $_SESSION['mensagemlogin'] = "Sua conta ainda não foi ativada pelo email!";
+            header("location:login.php");
+            exit();
         }
         
         if (password_verify($senha, $senha_hasheada)) {
