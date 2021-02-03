@@ -1,6 +1,6 @@
 <?php
 
-require_once $_SERVER['DOCUMENT_ROOT'] . '/barbearia_xavier/database/DBConnection.class.php';
+require $_SERVER['DOCUMENT_ROOT'] . '/barbearia_xavier/database/DBConnection.class.php';
 
 class DBQuery {
 	
@@ -20,7 +20,7 @@ class DBQuery {
 		$sql .= " SELECT "	. implode(", ", $this->getFields());
 		$sql .= " FROM "	. $this->getTableName();
 		$sql .= (($where!="")?(" WHERE ".$where):"");
-
+        
 		$dbConnection = new DBConnection();
 		$resultSet = $dbConnection->query($sql);
 		return ($resultSet);
@@ -116,7 +116,7 @@ class DBQuery {
 		
 		$sql  = " UPDATE ". $this->getTableName();
 		$sql .= " SET ";
-		for($i=1; $i<$qtd; $i++){   // $i++ == $i=$i+1
+		for($i=0; $i<$qtd; $i++){   // $i++ == $i=$i+1
 			$sql .= " ".$arrayFields[$i]."= '".$values[$i]."' ";
 			$sql .=  ($i==$qtd-1)?" ":",";
 		}
@@ -131,15 +131,15 @@ class DBQuery {
 	    $values = $this->clearArraySQLInjection($values);
 		$qtd = count($values);
 		$arrayFields = $this->getFields();
-	
+
 		$sql  = " UPDATE ". $this->getTableName();
 		$sql .= " SET ";
-		for($i=1; $i<$qtd; $i++){   // $i++ == $i=$i+1
+		for($i=0; $i<$qtd; $i++){   // $i++ == $i=$i+1
 			$sql .= " ".$arrayFields[$i]."= '".$values[$i]."' ";
 			$sql .=  ($i==$qtd-1)?" ":",";
 		}
 		$sql .=" WHERE ". $where;
-	
+        
 		$dbConnection = new DBConnection();
 		if ($where != "")
 			$returnOK = $dbConnection->query($sql);
@@ -155,7 +155,7 @@ class DBQuery {
 		
 		$sql  = " UPDATE ". $this->getTableName();
 		$sql .= " SET ";
-		for($i=1; $i<$qtd; $i++){   // $i++ == $i=$i+1
+		for($i=0; $i<$qtd; $i++){   // $i++ == $i=$i+1
 			$sql .= " ".$arrayFields[$i]."= '".$values[$i]."' ";
 			$sql .=  ($i==$qtd-1)?" ":",";
 		}

@@ -19,24 +19,24 @@
 
 	<div class="container-contact100">
 		<div class="wrap-contact100">
-			<form class="contact100-form validate-form">
+			<form class="contact100-form validate-form" method="POST" action="<?php echo htmlspecialchars("contactprocess.php")?>">
 				<span class="contact100-form-title">
 					Contato
 				</span>
 
 				<label class="label-input100" for="first-name">Nome</label>
 				<div class="wrap-input100 rs1-wrap-input100 validate-input" data-validate="Type first name">
-					<input id="first-name" class="input100" type="text" name="first-name" placeholder="Primeiro Nome">
+					<input id="first-name" class="input100" type="text" name="first-name" placeholder="Primeiro Nome" required>
 					<span class="focus-input100"></span>
 				</div>
 				<div class="wrap-input100 rs2-wrap-input100 validate-input" data-validate="Type last name">
-					<input class="input100" type="text" name="last-name" placeholder="Último nome">
+					<input class="input100" type="text" name="last-name" placeholder="Último nome" required>
 					<span class="focus-input100"></span>
 				</div>
 
 				<label class="label-input100" for="email">Email </label>
 				<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
-					<input id="email" class="input100" type="text" name="email" placeholder="Ex. exemplo@email.com">
+					<input id="email" class="input100" type="email" name="email" placeholder="Ex. exemplo@email.com" required>
 					<span class="focus-input100"></span>
 				</div>
 
@@ -48,12 +48,12 @@
 
 				<label class="label-input100" for="message">Mensagem</label>
 				<div class="wrap-input100 validate-input" data-validate = "Message is required">
-					<textarea id="message" class="input100" name="message" placeholder="Escreva uma mensagem para nós"></textarea>
+					<textarea id="message" class="input100" name="message" placeholder="Escreva uma mensagem para nós" required></textarea>
 					<span class="focus-input100"></span>
 				</div>
 
 				<div class="container-contact100-form-btn">
-					<button class="contact100-form-btn">
+					<button class="contact100-form-btn" name="contactform">
 						Enviar a mensagem
 					</button>
 				</div>

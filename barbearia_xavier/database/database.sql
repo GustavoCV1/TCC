@@ -10,7 +10,7 @@ CREATE TABLE usuario (
     telefone        INT(15),
     permissao		CHAR(1) NOT NULL, -- {"U" = Usuário, "F" = Funcionário, "A" = Administrador}
     foto            VARCHAR(255),
-    chave           VARCHAR(32) NOT NULL ,
+    chave           VARCHAR(32),
     verificada      INT(1) NOT NULL DEFAULT '0',
     PRIMARY KEY (idUsuario)
 );

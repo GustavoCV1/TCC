@@ -2,7 +2,7 @@
 <html lang="en" >
 <head>
   <meta charset="UTF-8">
-  <title>Login</title>
+  <title>Redefinição de Senha</title>
   <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css'>
 <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900&amp;subset=latin,latin-ext'><link rel="stylesheet" href="./login.scss">
   <link rel="shortcut icon" href="imagens/logo_barbearia_2.png" type="image/x-icon"/>
@@ -15,33 +15,59 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 
+  <style>
+
+      input[type="number"]::-webkit-outer-spin-button,
+      input[type="number"]::-webkit-inner-spin-button {
+          -webkit-appearance: none;
+          margin: 0;
+      }
+      
+      input[type="number"] {
+          -moz-appearance: textfield;
+      }
+     
+  </style>
+    
 </head>
 
 <body>
 <!-- partial:index.partial.html -->
+    
+<?php
+  
+session_start();
+    
+?>
 
 <div class="materialContainer">
 
    <div class="box">
        
-       <a href="login.php" style="margin-bottom:10px; color:grey;">Voltar</a>
+       <a href="recovery.php" style="margin-bottom:10px; color:grey;">Voltar</a>
 
-       <div class="title">Recuperação de Senha</div>
+       <div class="title">Código para Redefinição</div><br/>
        
        <?php if (!empty($_SESSION['mensagemrecovery'])) {
                 $mensagem = $_SESSION["mensagemrecovery"];
                 echo "<span style='color:red; margin-bottom:5px; font-size:15px;'>".$mensagem."</span>"; }  ?>
 
-       <form id="loginform" role="form" method="POST" action="<?php echo htmlspecialchars("recoveryprocess.php")?>">
+       <form id="codred" role="form" method="POST" action="<?php echo htmlspecialchars("recoveryprocess.php")?>">
 
           <div class="input">
-             <label for="email">Email</label>
-             <input type="email" name="email" id="email" minlength="5" required>
+             <label for="cod">Código (recebido por email)</label>
+             <input type="number" name="cod" id="cod" min="100000" max="999999" required>
+             <span class="spin"></span>
+          </div>
+           
+          <div class="input">
+             <label for="novasenha">Nova Senha</label>
+             <input type="text" name="novasenha" id="novasenha" required>
              <span class="spin"></span>
           </div>
 
           <div class="button login">
-             <button type="submit" id="btn-login" name="recoveryform"><span>Continuar</span> <i class="fa fa-check"></i></button>
+             <button type="submit" id="btn-login" name="codform"><span>Continuar</span> <i class="fa fa-check"></i></button>
           </div>
            
       </form>

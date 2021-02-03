@@ -3,15 +3,15 @@
     require $_SERVER['DOCUMENT_ROOT'] . '/barbearia_xavier/database/DBQuery.class.php';
     require $_SERVER['DOCUMENT_ROOT'] . '/barbearia_xavier/classes/Usuario.class.php';
 
-    $email = $senha1 = $senha2 = $nome = $telefone = "";
-    session_start();
-
     function stripit($data) {
         $data = trim($data);
         $data = stripslashes($data);
         $data = htmlspecialchars($data);
         return $data;
     }
+
+    $email = $senha1 = $senha2 = $nome = $telefone = "";
+    session_start();
 
     if ($_SERVER["REQUEST_METHOD"] == "POST" && count($_POST) > 0){
         $nome = stripit($_POST['reguser']);
@@ -54,16 +54,15 @@
             $chave = md5(rand(0,1000)); // Hash de 32 caracteres aleatórios. Será usado na verificação de email.
             // Exemplo: f4552671f8909587cf485ea990207f3b
             
+            $dados = array($nome, $email, $senha_hasheada, "U", $chave);
             $dbquery2 = new DBQuery($tableName, $fields, $keyField);
-            $criar = $dbquery2->insert($nome, $email, $senha_hasheada, "U", $chave);
+            $criar = $dbquery2->insert($dados);
                 
-            // MANDAR EMAIL DE CONFIRMAÇÃO AQUI E ADICIONAR verificar.php
+            require $_SERVER['DOCUMENT_ROOT'] . '/barbearia_xavier/phpmailer/mailer.php';
 
-  	         $_SESSION['usuario'] = $nome;
-  	         $_SESSION['logado'] = true;
-             setcookie("usuario", $nome, time()+60*60*1000);
-  	         header("location:pagusuario.php");
-             exit();
+            $_SESSION['mensagemlogin'] = "Conta criada com sucesso! Verifique seu email.";
+  	        header("location:login.php");
+            exit();
                 
         }   
             

@@ -65,12 +65,17 @@
 <div class="materialContainer">
 
    <div class="box">
+       
+      <a href="index.php" style="margin-bottom:2px; color:grey;">Voltar</a>
 
       <div class="title">ENTRAR</div>
        
       <?php if (!empty($_SESSION['mensagemlogin'])) {
                 $mensagem = $_SESSION["mensagemlogin"];
-                echo "<span style='color:red; margin-bottom:5px; font-size:15px;'>Erro: ".$mensagem."</span>"; }  ?>
+                echo '<script type="text/javascript">';
+                    echo 'alert("'.$mensagem.'")';
+                echo '</script>'; 
+                unset($_SESSION['mensagemlogin']); }  ?>
 
        <form id="loginform" role="form" method="POST" action="<?php echo htmlspecialchars("loginprocess.php")?>">
 
@@ -91,7 +96,7 @@
           </div>
 
           <div class="button login">
-             <button type="submit" id="btn-login"><span>Entrar</span> <i class="fa fa-check"></i></button>
+             <button type="submit" id="btn-login" name="loginform"><span>Entrar</span> <i class="fa fa-check"></i></button>
           </div>
            
       </form>
@@ -134,7 +139,7 @@
           </div>
 
           <div class="button">
-             <button type="submit" id="btn-signup"><span>Criar Conta</span></button>
+             <button type="submit" id="btn-signup" name="signupform"><span>Criar Conta</span></button>
           </div> 
           
       </form>

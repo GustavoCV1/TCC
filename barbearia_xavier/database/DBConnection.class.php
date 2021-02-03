@@ -18,7 +18,7 @@ class DBConnection{
     $databaseSchema = "";
     $databaseCharset= "";
       
-    require_once $_SERVER['DOCUMENT_ROOT'] . '/barbearia_xavier/database/dbConfig.php';
+    require $_SERVER['DOCUMENT_ROOT'] . '/barbearia_xavier/database/dbConfig.php';
     
 	$this->setHost		( $databaseHost );
 	$this->setUsername	( $databaseUser );
@@ -88,7 +88,7 @@ class DBConnection{
   public function query($sql) {
       
     $mostrarSQL = "";
-    require_once $_SERVER['DOCUMENT_ROOT'] . '/barbearia_xavier/database/dbConfig.php';
+    require $_SERVER['DOCUMENT_ROOT'] . '/barbearia_xavier/database/dbConfig.php';
     
     $conexao = mysqli_connect($this->getHost(), $this->getUsername(), $this->getPassword(), $this->getSchema());
     

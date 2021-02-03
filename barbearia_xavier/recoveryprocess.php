@@ -1,39 +1,84 @@
 <?php
 
-    require $_SERVER['DOCUMENT_ROOT'] . '/barbearia_xavier/database/DBQuery.class.php';
+require $_SERVER['DOCUMENT_ROOT'] . '/barbearia_xavier/database/DBQuery.class.php';
 
-    $email = "";
-    session_start();
+$email = "";
+session_start();
 
+if ($_SERVER["REQUEST_METHOD"] == "POST" && count($_POST) > 0){
+    
     function stripit($data) {
         $data = trim($data);
         $data = stripslashes($data);
         $data = htmlspecialchars($data);
         return $data;
     }
+    
+    if (isset($_POST['recoveryform'])){
 
-    if ($_SERVER["REQUEST_METHOD"] == "POST" && count($_POST) > 0){
         $email = stripit($_POST['email']);
-        
+
         $tableName  = "barbearia.usuario";
         $fields     = "email";
         $keyField   = "idUsuario";
-        
-        $dbquery = new DBQuery($tableName, $fields, $keyField);
-        $resultSet = $dbquery->select("email = '$email' LIMIT 1;");
-        
+
+        $dbquery1 = new DBQuery($tableName, $fields, $keyField);
+        $resultSet = $dbquery1->select("email = '$email' LIMIT 1;");
+
         if (mysqli_num_rows($resultSet) == 0) {
             $_SESSION['mensagemrecovery'] = "A conta especificada não existe!";
             header("location:recovery.php");
             exit();
         }
-        
+
         else {
             
-            //Enviar emailkkkkkk
+            $cod = rand(100000, 999999);
+            $_SESSION['email'] = $email;
+            $_SESSION['cod'] = $cod;
+
+            require $_SERVER['DOCUMENT_ROOT'] . '/barbearia_xavier/phpmailer/mailer.php';
+
+            $_SESSION['mensagemrecovery'] = "Um email com o código de redefinição foi enviado para seu email!";
             
+            header("location:recoverypass.php");
+            exit();
+
         }
-        
+
     }
+
+    elseif (isset($_POST['codform'])){
+
+        $formcod = stripit($_POST['cod']);
+        $formnovasenha = stripit($_POST['novasenha']);
+        $formcodsecreto = $_SESSION['cod'];
+        $formemailsecreto = $_SESSION['email'];
+        
+        if ($formcod = $formcodsecreto){
+            
+            $tableName  = "barbearia.usuario";
+            $fields     = "senha";
+            $keyField   = "idUsuario";
+
+            $dbquery3 = new DBQuery($tableName, $fields, $keyField);
+            $senhainserida = password_hash($formnovasenha, PASSWORD_DEFAULT);
+            $a = array($senhainserida);
+            
+            $ativar = $dbquery3->updateWhere($a, "email = '$formemailsecreto';");
+            
+            $_SESSION['mensagemrecovery'] = "Sua senha foi redefinida com sucesso!";
+            $_SESSION['mensagemlogin'] = "Sua senha foi redefinida com sucesso!";
+            
+            header("location:login.php");
+            exit();
+        }
+
+    }
+
+}
+
+header("location:recovery.php");
+exit;
 
 ?>

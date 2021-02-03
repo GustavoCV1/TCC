@@ -1,8 +1,8 @@
 <?php
 
     $smtpHost   = "smtp.gmail.com";
-    $smtpUser   = "usuario@gmail.com";
-    $smtpPass   = "senha";
+    $smtpUser   = "";
+    $smtpPass   = "";
     $smtpPort   = "587";
     $smtpAuth   = "TLS/SSL";
 
