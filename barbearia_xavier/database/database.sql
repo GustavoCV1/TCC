@@ -36,4 +36,4 @@ CREATE TABLE atendimento (
 );
 
 INSERT INTO usuario (nome, email, senha, permissao) 
-	VALUES ("Administração", "italorlui@gmail.com", "$2y$10$tEp24z199iKMgfn.NfdnWe3fnSdw8W1IztZG9W8l2jXMlaIzBoj9m", "A");
+	VALUES ("Administração", "barbeariaxavierkx@gmail.com", "$2y$10$cqO/JY1.MX0P74ZQQLlF5Ovn7nQKmcwTEdnyLB6ZZ7jp2vDR1tCDu", "A");
