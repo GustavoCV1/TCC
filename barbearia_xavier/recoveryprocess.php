@@ -24,8 +24,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && count($_POST) > 0){
 
         $dbquery1 = new DBQuery($tableName, $fields, $keyField);
         $resultSet = $dbquery1->select("email = '$email' LIMIT 1;");
+        $num = mysqli_num_rows($resultSet);
 
-        if (mysqli_num_rows($resultSet) == 0) {
+        if ($num == 0) {
             $_SESSION['mensagemrecovery'] = "A conta especificada não existe!";
             header("location:recovery.php");
             exit();
@@ -50,12 +51,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && count($_POST) > 0){
 
     elseif (isset($_POST['codform'])){
 
-        $formcod = stripit($_POST['cod']);
+        $formcod = stripit($_POST['codusu']);
         $formnovasenha = stripit($_POST['novasenha']);
         $formcodsecreto = $_SESSION['cod'];
         $formemailsecreto = $_SESSION['email'];
         
-        if ($formcod = $formcodsecreto){
+        if ($formcod == $formcodsecreto){
             
             $tableName  = "barbearia.usuario";
             $fields     = "senha";
@@ -71,6 +72,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && count($_POST) > 0){
             $_SESSION['mensagemlogin'] = "Sua senha foi redefinida com sucesso!";
             
             header("location:login.php");
+            exit();
+        }
+        
+        else{
+            $_SESSION['mensagemrecovery'] = "O código inserido é inválido!";
+            echo "<script type='text/javascript'>alert('O código inserido é inválido!');</script>";
+            header("location:recoverypass.php");
             exit();
         }
 

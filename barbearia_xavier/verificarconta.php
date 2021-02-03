@@ -14,17 +14,20 @@
   <link href="https://fonts.googleapis.com/css2?family=Arimo:wght@700&display=swap" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    
 </head>
 
 <body>
+    
+    <?php session_start(); ?>
     
     <div class="materialContainer">
 
         <div class="box">
        
-            <a href="login.php" style="margin-bottom:10px; color:grey;">Voltar para o Login</a>
+            <a href="login.php?unset=true" style="margin-bottom:10px; color:grey;">Voltar para o Login</a>
 
-            <div class="title">Verificação de conta</div><br/>
+            <div class="title">Verificação de Conta</div><br/>
     
     <?php
     

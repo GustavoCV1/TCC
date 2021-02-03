@@ -1,3 +1,13 @@
+    <?php
+        function unsetter() {
+            session_unset();
+        }
+
+      if (isset($_GET['unset'])) {
+            unsetter();
+      }
+    ?>
+
 <!DOCTYPE html>
 <html lang="en" >
 <head>
@@ -42,6 +52,10 @@
   <!---<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>--->
 
 </head>
+    
+<?php
+    session_start();
+?>
 
 <script type="text/javascript">
     function carregar(){

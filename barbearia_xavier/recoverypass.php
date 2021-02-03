@@ -44,19 +44,19 @@ session_start();
 
    <div class="box">
        
-       <a href="recovery.php" style="margin-bottom:10px; color:grey;">Voltar</a>
+       <a href="recovery.php?unset=true" style="margin-bottom:10px; color:grey;">Voltar</a>
 
        <div class="title">Código para Redefinição</div><br/>
        
        <?php if (!empty($_SESSION['mensagemrecovery'])) {
                 $mensagem = $_SESSION["mensagemrecovery"];
-                echo "<span style='color:red; margin-bottom:5px; font-size:15px;'>".$mensagem."</span>"; }  ?>
+                echo "<span style='color:red; margin-bottom:5px; font-size:15px;'>".$mensagem."</span><br/>"; }  ?>
 
-       <form id="codred" role="form" method="POST" action="<?php echo htmlspecialchars("recoveryprocess.php")?>">
+       <form id="codred" role="form" method="POST" action="<?php echo htmlspecialchars("recoveryprocess.php");?>">
 
           <div class="input">
-             <label for="cod">Código (recebido por email)</label>
-             <input type="number" name="cod" id="cod" min="100000" max="999999" required>
+             <label for="codusu">Código</label>
+             <input type="number" name="codusu" id="codusu" min="100000" max="999999" required>
              <span class="spin"></span>
           </div>
            

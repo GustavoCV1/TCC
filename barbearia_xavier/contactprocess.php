@@ -12,6 +12,7 @@
     require $_SERVER['DOCUMENT_ROOT'] . '/barbearia_xavier/phpmailer/mailer.php';       
 
     if ($contact == 1) {
+        $_SESSION['mensagemcontato'] = "O email foi enviado!";
         header("location:index.php");
         exit();
     }

@@ -1,3 +1,13 @@
+    <?php
+        function unsetter() {
+            session_unset();
+        }
+
+      if (isset($_GET['unset'])) {
+            unsetter();
+      }
+    ?>
+
 <!DOCTYPE html>
 <html lang="en" >
 <head>
@@ -66,7 +76,7 @@
 
    <div class="box">
        
-      <a href="index.php" style="margin-bottom:2px; color:grey;">Voltar</a>
+      <a href="index.php?unset=true" style="margin-bottom:2px; color:grey;">Voltar</a>
 
       <div class="title">ENTRAR</div>
        

@@ -60,6 +60,22 @@
 			</form>
 
 			<div class="contact100-more flex-col-c-m" style="background-image: url('imagens/login.jpg');">
+                <?php if (!empty($_SESSION['mensagemcontato'])) {
+                    $mensagem = $_SESSION['mensagemcontato'];
+                    echo "<div class='flex-w size1 p-b-47'>
+                            <div class='txt1 p-r-25'>
+                                <span class='lnr lnr-map-marker'></span>
+                            </div>
+
+                            <div class='flex-col size2'>
+                                <span class='txt1 p-b-20' style='color:red;'>";
+                            echo $mensagem;
+                    echo "      </span>
+
+                            </div>
+                        </div>";
+                    echo "<span style='color:red; margin-bottom:5px; font-size:15px;'>".$mensagem."</span>"; }  ?>
+                
 				<div class="flex-w size1 p-b-47">
 					<div class="txt1 p-r-25">
 						<span class="lnr lnr-map-marker"></span>
@@ -100,6 +116,10 @@
 					<div class="flex-col size2">
 						<span class="txt1 p-b-20">
 							Email 
+						</span>
+                        
+                        <span class="txt3">
+							barbeariaxavierkx@gmail.com
 						</span>
 
 						<span class="txt3">

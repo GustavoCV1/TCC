@@ -1,3 +1,13 @@
+    <?php
+        function unsetter() {
+            session_unset();
+        }
+
+      if (isset($_GET['unset'])) {
+            unsetter();
+      }
+    ?>
+
 <!DOCTYPE html>
 <html lang="en" >
 <head>
@@ -14,22 +24,26 @@
   <link href="https://fonts.googleapis.com/css2?family=Arimo:wght@700&display=swap" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-
+    
 </head>
 
 <body>
 <!-- partial:index.partial.html -->
+    
+<?php
+    session_start();
+?>
 
 <div class="materialContainer">
 
    <div class="box">
        
-       <a href="login.php" style="margin-bottom:10px; color:grey;">Voltar</a>
+       <a href="login.php?unset=true" style="margin-bottom:10px; color:grey;">Voltar</a><br/>
 
-       <div class="title">Recuperação de Senha</div>
+       <div class="title">Recuperação de Senha</div><br/>
        
        <?php if (!empty($_SESSION['mensagemrecovery'])) {
-                $mensagem = $_SESSION["mensagemrecovery"];
+                $mensagem = $_SESSION['mensagemrecovery'];
                 echo "<span style='color:red; margin-bottom:5px; font-size:15px;'>".$mensagem."</span>"; }  ?>
 
        <form id="loginform" role="form" method="POST" action="<?php echo htmlspecialchars("recoveryprocess.php")?>">
