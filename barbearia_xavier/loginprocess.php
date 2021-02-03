@@ -38,13 +38,13 @@
             $verificada = $linha["verificada"];
         }
 
-        if ($verificada = 0){
+        if ($verificada == "0"){
             $_SESSION['mensagemlogin'] = "Sua conta ainda não foi ativada pelo email!";
             header("location:login.php");
             exit();
         }
         
-        if (password_verify($senha, $senha_hasheada)) {
+        elseif (password_verify($senha, $senha_hasheada)) {
             
             $_SESSION['logado'] = true;
             

@@ -11,18 +11,23 @@
 
     require $_SERVER['DOCUMENT_ROOT'] . '/barbearia_xavier/phpmailer/mailer.php';       
 
-    if ($contact = 1) {
+    if ($contact == 1) {
         header("location:index.php");
         exit();
     }
 
-    if ($signup = 1) {
+    elseif ($signup == 1) {
         header("location:login.php");
         exit();
     }
 
-    if ($recovery = 1) {
+    elseif ($recovery == 1) {
         header("location:recovery.php");
+        exit();
+    }
+
+    else{
+        header("location:index.php");
         exit();
     }
 

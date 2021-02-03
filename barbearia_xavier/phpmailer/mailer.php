@@ -10,6 +10,9 @@ require 'vendor/autoload.php';
 
 // Instantiation and passing `true` enables exceptions
 $mail = new PHPMailer(true);
+$contact = 0;
+$signup = 0;
+$recovery = 0;
 
 try {
    
@@ -153,7 +156,7 @@ try {
 }
     
 catch (Exception $e) {
-    if ($contact = 1) {
+    if ($contact == 1) {
         echo "<script type='text/javascript'>alert('Mensagem não enviada! Tente novamente mais tarde!');";
         $erro = "Mensagem não enviada! Erro: {$erroEnvio}";
         $_SESSION['mensagemcontato'] = $erro;
@@ -161,7 +164,7 @@ catch (Exception $e) {
         exit();
     }
     
-    if ($signup = 1) {
+    if ($signup == 1) {
         echo "<script type='text/javascript'>alert('Email para a verificação de conta não enviado! Tente novamente mais tarde!');";
         $erro = "Email para a verificação de conta não enviado! Erro: {$erroEnvio}";
         $_SESSION['mensagemlogin'] = $erro;
@@ -169,7 +172,7 @@ catch (Exception $e) {
         exit();
     }
     
-    if ($recovery = 1) {
+    if ($recovery == 1) {
         echo "<script type='text/javascript'>alert('Email para a redefinição de senha não enviado! Tente novamente mais tarde!');";
         $erro = "Email para a redefinição de senha não enviado! Erro: {$erroEnvio}";
         $_SESSION['mensagemrecovery'] = $erro;
