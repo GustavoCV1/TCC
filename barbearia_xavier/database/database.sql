@@ -9,7 +9,6 @@ CREATE TABLE usuario (
     senha           VARCHAR(255) NOT NULL,
     telefone        INT(15),
     permissao		CHAR(1) NOT NULL, -- {"U" = Usuário, "F" = Funcionário, "A" = Administrador}
-    foto            VARCHAR(255),
     chave           VARCHAR(32),
     verificada      INT(1) NOT NULL DEFAULT '0',
     PRIMARY KEY (idUsuario)

@@ -56,14 +56,14 @@
             }
         
             elseif (mysqli_num_rows($resultSet)==1 && $perm =='F') {
-                $_SESSION['funcionario'] = $nm;
+                $_SESSION['usuario'] = $nm;
                 setcookie("usuario", $nm, time()+60*60*1000);
                 header("location:pagfuncionario.php");
                 exit();
             }
 
             elseif (mysqli_num_rows($resultSet)==1 && $perm =='A') {
-                $_SESSION['administrador'] = $nm;
+                $_SESSION['usuario'] = $nm;
                 setcookie("usuario", $nm, time()+60*60*1000);
                 header("location:pagadm.php");
                 exit();

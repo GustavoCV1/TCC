@@ -1,22 +1,13 @@
     <?php
-        function unsetter() {
-            session_unset();
-        }
-
       if (isset($_GET['unset'])) {
-            unsetter();
-      }
-
-      function senddetect() {
-          $status = $_GET['status'];
-          echo '<script type="text/javascript">alert("'.$status.'");</script>';        
+          session_unset();
       }
 
       if (isset($_GET['status'])) {
-          senddetect();
+          $status = $_GET['status'];
+          echo '<script type="text/javascript">alert("'.$status.'");</script>';
       }
     ?>
-
 <!DOCTYPE html>
 <html lang="en" >
 <head>

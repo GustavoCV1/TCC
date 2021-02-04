@@ -1,117 +1,146 @@
 <?php
     session_start();
+    if (isset($_SESSION['usuario'])){
+        $nome = $_SESSION['usuario'];
+        require $_SERVER['DOCUMENT_ROOT'] . '/barbearia_xavier/database/DBQuery.class.php';
+        
+        $tableName  = "barbearia.usuario";
+        $fields     = "nome, verificada";
+        $keyField   = "idUsuario";
+        
+        $dbquery1 = new DBQuery($tableName, $fields, $keyField);
+        $resultSet = $dbquery1->select("nome = '$nome' AND verificada = '1' LIMIT 1;");
+        
+        if (mysqli_num_rows($resultSet) == 0) {
+            $_SESSION['mensagemlogin'] = "Erro fatal!";
+            header("location:login.php");
+            exit();
+        }
+        
+        else {
+            
+            $tableName  = "barbearia.usuario";
+            $fields     = "nome, email, telefone";
+            $keyField   = "idUsuario";
+            
+            $dbquery2 = new DBQuery($tableName, $fields, $keyField);
+            $resultSet = $dbquery2->select("nome = '$nome' LIMIT 1;");
+            
+            while ($linha = mysqli_fetch_assoc($resultSet)) {
+                $email = $linha["email"];
+                $telefone = $linha['telefone'];
+            }
+
 ?>
 
 <!DOCTYPE html>
 <html>
+    
 <head>
-<meta charset='utf-8' />
-<link href='css/core/main.min.css' rel='stylesheet' />
-<link href='css/daygrid/main.min.css' rel='stylesheet' />
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"/>
-<link rel="stylesheet" href="css/calendar.css"/>
-<link rel="stylesheet" href="pagusuario.css"/>
-<script src='js/core/main.min.js'></script>
-<script src='js/interaction/main.min.js'></script>
-<script src='js/daygrid/main.min.js'></script>
+<meta charset='utf-8'>
+<title><?php echo $nome . " | Barbearia Xavier"; ?></title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css'>
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900&amp;subset=latin,latin-ext'><link rel="stylesheet" href="./login.scss">
+<link rel="stylesheet" type="text/css" href="pagusuario.css">
+<link rel="shortcut icon" href="imagens/logo_barbearia_2.png" type="image/x-icon"/>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" ></script>
-<script src="js/calendar.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Arimo:wght@700&display=swap" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 </head>
+    
 <body>
-  <h2> Agendamento </h2>
-  <br/>
-  <p> ○ Agende somente se tiver certeza, se agendar e não comparecer no dia agendado, será acrescida uma taxa de 10% no valor.</p>
-  <p> ○ Os agendamentos estão sujeitos à 15 minutos de atraso. </p>
-  <?php
-    if(isset($_SESSION['msg'])){
-        echo $_SESSION['msg'];
-        unset($_SESSION['msg']);
-    }
-  ?>
-  <div id='calendar'></div>
-
-  <div class="modal fade" id="visualizar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Detalhes do Agendamento</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-            <dl class="row">
-
-                <dt class="col-sm-3">Agendamento</dt>
-                <dd class="col-sm-9" id="title"></dd>
-
-                <dt class="col-sm-3">Horário do Agendamento</dt>
-                <dd class="col-sm-9" id="start"></dd>
-            </dl>
-            </div>
+    
+    <nav class="navbar navbar-inverse">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand">Barbearia Xavier</a>
         </div>
-    </div>
-  </div>
+        <ul class="nav navbar-nav">
+          <li><a href="calendario.php">Atendimentos e Horários</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="pagusuario.php"><span class="glyphicon glyphicon-user"></span> Minha Conta (<?php echo $nome; ?>)</a></li>
+          <li><a href="index.php?unset"><span class="glyphicon glyphicon-log-out"></span>Sair</a></li>
+        </ul>
+      </div>
+    </nav>
+    
+    <div id="conta">
+    
+        <div class="materialContainer">
 
-  <div class="modal fade" id="cadastrar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Cadastrar agendamento</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <span id="msg-cad"></span>
-                <form id="addevent" method="POST" enctype="multipart/form-data">
-                    <div class="form-group row">
-                        <label class="col-sm-2 col-form-label"> Nome </label>
-                        <div class="col-sm-10">
-                            <input type="text" name="cliente" class="form-control" id="cliente" placeholder="Digite seu nome"/>
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label class="col-sm-2 col-form-label"> Serviço </label>
-                        <div class="col-sm-10">
-                            <select id="servico" name="servico" class="form-control">
-                                <option value="Corte simples"> Corte simples - R$20,00 </option>
-                                <option value="Corte com penteado"> Corte com penteado - R$25,00 </option>
-                                <option value="Corte + barba"> Corte + barba - R$40,00 </option>
-                                <option value="Barba"> Barba - R$15,00 </option>
-                                <option value="Pintura"> Pintura - R$40,00 </option>
-                                <option value="Progressiva"> Progressiva - R$60,00 </option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label class="col-sm-2 col-form-label"> Barbeiro </label>
-                        <div class="col-sm-10">
-                            <select id="barbeiro" name="barbeiro" class="form-control">
-                                <option value="Kleber Xavier"> Kleber Xavier </option>
-                                <option value="Dan"> Dan </option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label class="col-sm-2 col-form-label"> Data e hora do agendamento </label>
-                        <div class="col-sm-10">
-                            <input type="text" name="start" class="form-control" id="start" onkeypress="DataHora(event, this)"/>
-                        </div>
-                    </div>
+           <div class="box">
 
-                    <div class="form-group row">
-                        <div class="col-sm-10">
-                            <button type="submit" name = "CadEvent" id="CadEvent" class="btn btn-dark" value="CadEvent"> Cadastrar </button>
-                        </div>
-                    </div>
-                </form>
-            </div>
+               <div class="title">Alterar Informações</div><br/>
+
+               <?php if (!empty($_SESSION['mensagemaccount'])) {
+                        $mensagem = $_SESSION['mensagemaccount'];
+                        echo "<span style='color:red; margin-bottom:5px; font-size:15px;'>".$mensagem."</span>"; }  ?>
+               
+               <form id="accountform" role="form" method="POST" action="<?php echo htmlspecialchars("accountprocess.php")?>">
+
+                  <div class="input">
+                     <label for="nome">Nome</label>
+                     <input type="text" name="nome" id="nome" minlength="5" required>
+                     <span class="spin"></span>
+                  </div>
+                   
+                   <div class="input">
+                     <label for="email">Email</label>
+                     <input type="email" name="email" id="email" minlength="5" required>
+                     <span class="spin"></span>
+                  </div>
+                   
+                   <div class="input">
+                     <label for="telefone">Telefone</label>
+                     <input type="text" name="telefone" id="telefone" minlength="5" required>
+                     <span class="spin"></span>
+                  </div>
+
+                  <div class="button login">
+                     <button type="submit" id="btn-login" name="accountform"><span>Alterar</span> <i class="fa fa-check"></i></button>
+                  </div>
+
+              </form>
+
+           </div>
+
+           <div class="overbox">
+              <div class="material-button alt-2"><span class="shape"></span></div>
+
+              <div class="title">Deletar Conta (Cuidado, esta operação NÃO PODE ser desfeita!)</div>
+
+              <form id="deleteform" role="form" method="POST" action="<?php echo htmlspecialchars("accountprocess.php")?>">
+
+                  <div class="input">
+                     <label for="senha">Insira sua Senha</label>
+                     <input type="password" name="senha" id="senha" minlength="5" required>
+                     <span class="spin"></span>
+                  </div>
+
+                  <div class="button">
+                     <button type="submit" id="btn-signup" name="deleteform"><span>Deletar Conta</span></button>
+                  </div> 
+
+              </form>
+
+           </div>
+
         </div>
-    </div>
-  </div>
 
+    </div>
+
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script><script  src="./login.js"></script>
+    
 </body>
+    
 </html>
+
+<?php }
+    }?>
