@@ -2,6 +2,7 @@
 
 require $_SERVER['DOCUMENT_ROOT'] . '/barbearia_xavier/database/DBQuery.class.php';
 
+$nome = $email = $senha = $telefone = "";
 session_start();
 
 if ($_SERVER["REQUEST_METHOD"] == "POST" && count($_POST) > 0){
