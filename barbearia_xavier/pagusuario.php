@@ -13,14 +13,14 @@
         
         if (mysqli_num_rows($resultSet) == 0) {
             $_SESSION['mensagemlogin'] = "Erro fatal!";
-            header("location:login.php");
+            header("location:login.php?unset=true");
             exit();
         }
         
         else {
             
             $tableName  = "barbearia.usuario";
-            $fields     = "nome, email, telefone";
+            $fields     = "nome, email, telefone, permissao";
             $keyField   = "idUsuario";
             
             $dbquery2 = new DBQuery($tableName, $fields, $keyField);
@@ -28,8 +28,11 @@
             
             while ($linha = mysqli_fetch_assoc($resultSet)) {
                 $email = $linha["email"];
-                $telefone = $linha['telefone'];
+                $telefone = $linha["telefone"];
+                $permissao = $linha["permissao"];
             }
+            
+            if ($permissao == "U"){
 
 ?>
 
@@ -66,7 +69,7 @@
         </ul>
         <ul class="nav navbar-nav navbar-right">
           <li><a href="pagusuario.php"><span class="glyphicon glyphicon-user"></span> Minha Conta (<?php echo $nome; ?>)</a></li>
-          <li><a href="index.php?unset"><span class="glyphicon glyphicon-log-out"></span>Sair</a></li>
+          <li><a href="index.php?unset=true"><span class="glyphicon glyphicon-log-out"></span>Sair</a></li>
         </ul>
       </div>
     </nav>
@@ -77,7 +80,7 @@
 
            <div class="box">
 
-               <div class="title">Alterar Informações</div><br/>
+               <div class="title">Alterar Dados</div><br/>
 
                <?php if (!empty($_SESSION['mensagemaccount'])) {
                         $mensagem = $_SESSION['mensagemaccount'];
@@ -94,6 +97,12 @@
                    <div class="input">
                      <label for="email">Email</label>
                      <input type="email" name="email" id="email" minlength="5" required>
+                     <span class="spin"></span>
+                  </div>
+                   
+                   <div class="input">
+                     <label for="email">Senha</label>
+                     <input type="text" name="senha" id="senha" minlength="5" required>
                      <span class="spin"></span>
                   </div>
                    
@@ -142,5 +151,6 @@
     
 </html>
 
-<?php }
+<?php       }
+        }
     }?>

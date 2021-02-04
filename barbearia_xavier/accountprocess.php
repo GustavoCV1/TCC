@@ -18,14 +18,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && count($_POST) > 0){
         
         $nome = stripit($_POST['nome']);
         $email = stripit($_POST['email']);
+        $senha = stripit($_POST['senha']);
         $telefone = stripit($_POST['telefone']);
             
         $tableName  = "barbearia.usuario";
-        $fields     = "nome, email, telefone";
+        $fields     = "nome, email, senha, telefone";
         $keyField   = "idUsuario";
 
         $dbquery1 = new DBQuery($tableName, $fields, $keyField);
-        $resultSet = $dbquery1->select("email = '$email' LIMIT 1;");
+        $resultSet = $dbquery1->select("email = '$email' AND LIMIT 1;");
         $num = mysqli_num_rows($resultSet);
 
         if ($num == 0) {
@@ -37,11 +38,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && count($_POST) > 0){
         else {
             
             $tableName  = "barbearia.usuario";
-            $fields     = "nome, email, telefone";
+            $fields     = "nome, email, senha, telefone";
             $keyField   = "idUsuario";
+            $senha_hasheada = password_hash($senha, PASSWORD_DEFAULT);
             
             $dbquery2 = new DBQuery($tableName, $fields, $keyField);
-            $a = array($nome, $email, $telefone);
+            $a = array($nome, $email, $senha, $telefone);
             $modificar = $dbquery2->updateWhere($a, "email = '$email';");
 
             $_SESSION['mensagemaccount'] = "Seus dados foram modificados!";
@@ -75,7 +77,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && count($_POST) > 0){
         elseif (password_verify($senha, $senha_hasheada)){
             $deletar = $dbquery3->deleteWhere("nome = '$nome';");
             
-            header("location:index.php?status=Sua conta foi deletada!");
+            header("location:index.php?status=Sua conta foi deletada!&unset=true");
             exit();
         }
         
@@ -88,14 +90,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && count($_POST) > 0){
     }
     
     else{
-        header("location:index.php?status=Ocorreu um erro!");
+        header("location:index.php?status=Ocorreu um erro!&unset=true");
         exit();
     }
 
 }
 
 else{
-    header("location:index.php?status=Ocorreu um erro!");
+    header("location:index.php?status=Ocorreu um erro!&unset=true");
     exit();
 }
 ?>

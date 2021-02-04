@@ -46,6 +46,7 @@
         
         elseif (password_verify($senha, $senha_hasheada)) {
             
+            session_unset();
             $_SESSION['logado'] = true;
             
             if (mysqli_num_rows($resultSet)==1 && $perm =='U') {
