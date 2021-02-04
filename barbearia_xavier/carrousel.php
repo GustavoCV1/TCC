@@ -1,3 +1,4 @@
+<link rel="stylesheet" type="text/css" href="botao.css">
 <div id="myCarousel" class="carousel slide" data-ride="carousel">
   <!-- Indicators -->
   <ol class="carousel-indicators">
@@ -9,15 +10,14 @@
   <!-- Wrapper for slides -->
   <div class="carousel-inner">
     <div class="item active">
-      <img src="imagens/img1.jpg" alt="Los Angeles">
+      <img src="imagens/img1.jpg" alt="">
     </div>
 
     <div class="item">
-      <img src="imagens/img2.jpg" alt="Chicago">
+      <img src="imagens/img2.jpg" alt="">
     </div>
-
     <div class="item">
-      <img src="imagens/img3.jpg" alt="New York">
+      <img src="imagens/img3.jpg" alt="">
     </div>
   </div>
 
