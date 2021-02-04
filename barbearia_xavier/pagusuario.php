@@ -10,6 +10,7 @@
 <link href='css/daygrid/main.min.css' rel='stylesheet' />
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"/>
 <link rel="stylesheet" href="css/calendar.css"/>
+<link rel="stylesheet" href="pagusuario.css"/>
 <script src='js/core/main.min.js'></script>
 <script src='js/interaction/main.min.js'></script>
 <script src='js/daygrid/main.min.js'></script>
@@ -21,8 +22,8 @@
 <body>
   <h2> Agendamento </h2>
   <br/>
-  <p> Obs: Agende somente se tiver certeza, se agendar e não comparecer no dia agendado, será acrescida uma taxa de 10% no valor.</p>
-  <p> Obs: Os agendamentos estão sujeitos à 15 minutos de atraso. </p>
+  <p> ○ Agende somente se tiver certeza, se agendar e não comparecer no dia agendado, será acrescida uma taxa de 10% no valor.</p>
+  <p> ○ Os agendamentos estão sujeitos à 15 minutos de atraso. </p>
   <?php
     if(isset($_SESSION['msg'])){
         echo $_SESSION['msg'];
@@ -103,7 +104,7 @@
 
                     <div class="form-group row">
                         <div class="col-sm-10">
-                            <button type="submit" name = "CadEvent" id="CadEvent" class="btn btn-success" value="CadEvent"> Cadastrar </button>
+                            <button type="submit" name = "CadEvent" id="CadEvent" class="btn btn-dark" value="CadEvent"> Cadastrar </button>
                         </div>
                     </div>
                 </form>

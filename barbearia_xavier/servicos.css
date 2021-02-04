@@ -5,6 +5,41 @@
     
 }
 
+    .botao:hover{cursor: pointer}
+    .botao {
+      background: transparent; outline: none;
+      position: absolute;
+      margin-left: 460px;  
+      margin-top: 80px;
+      border: 2px solid #111;
+      padding: 15px 50px;
+      overflow: hidden;
+    }
+
+    .botao:hover:before{opacity: 1; transform: translate(0,0);}
+    .botao:before{
+      content: attr(data-hover);
+      position: absolute;
+      top: 1.1em; left: 0;
+      width: 100%;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-weight: 800;
+      font-size: .8em;
+      opacity: 0;
+      transform: translate(-100%,0);
+      transition: all .3s ease-in-out;
+    }
+
+      .botao:hover div{opacity: 0; transform: translate(100%,0)}
+      .botao div{
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        font-weight: 800;
+        font-size: .8em;
+        transition: all .3s ease-in-out;
+      }
+
 
 .pers {
     color: #111; 
