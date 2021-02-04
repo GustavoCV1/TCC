@@ -108,10 +108,11 @@
 					   <div class="description-box">
 					      <h4>Corte Infantil</h4>		      
 					      <p>Realizamos cortes infantis. Os cortes mais modernos para as crianças </p>
+                          <div class="categories"><b>↓</b></div>	
 					   </div>
 
 			         <div class="link-box">
-			            <a href="#">Agende já</a>
+			            <a href="login.php">Agende já</a>
 					      <a href="#" class="popup-modal-dismiss">Fechar</a>
 			         </div>		      
 
@@ -126,11 +127,11 @@
 					   <div class="description-box">
 					      <h4>Desenhos na navalha</h4>		      
 					      <p>Aproveite e crie um desenho no seu cabelo. Os desenhos mais diferenciados possíveis. </p>
-	               
+	                      <div class="categories"><b>↓</b></div>	
 					   </div>
 
 			         <div class="link-box">
-			            <a href="#">Agende já</a>
+			            <a href="login.php">Agende já</a>
 					      <a href="#" class="popup-modal-dismiss">Fechar</a>
 			         </div>		      
 
@@ -144,13 +145,13 @@
 
 					   <div class="description-box">
 					      <h4>Penteados</h4>		      
-					      <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit.</p>
+					      <p>Faça a mudança com penteados inovadores!</p>
 
-					      <div class="categories">Web Design</div>			               
+					      <div class="categories"><b>↓</b></div>			               
 					   </div>
 
 			         <div class="link-box">
-			            <a href="#">Agende já</a>
+			            <a href="login.php">Agende já</a>
 					      <a href="#" class="popup-modal-dismiss">Fechar</a>
 			         </div>		      
 
@@ -164,13 +165,13 @@
 
 					   <div class="description-box">
 					      <h4>Cortes com spray colorido</h4>		      
-					      <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit.</p>
+					      <p>Também fazemos cortes usando spray!</p>
 
-					      <div class="categories">Branding</div>			               
+					      <div class="categories"><b>↓</b></div>			               
 					   </div>
 
 			         <div class="link-box">
-			            <a href="#">Agende já</a>
+			            <a href="login.php">Agende já</a>
 					      <a href="#" class="popup-modal-dismiss">Fechar</a>
 			         </div>		      
 
@@ -184,13 +185,13 @@
 
 					   <div class="description-box">
 					      <h4>Degradê com risquinha</h4>		      
-					      <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit.</p>
+					      <p>Com um degradê, não podem faltar os desenhos!</p>
 
-					      <div class="categories">Web Development</div>			               
+					      <div class="categories"><b>↓</b></div>			               
 					   </div>
 
 			         <div class="link-box">
-			            <a href="#">Agende já</a>
+			            <a href="login.php">Agende já</a>
 					      <a href="#" class="popup-modal-dismiss">Fechar</a>
 			         </div>		      
 
@@ -204,13 +205,13 @@
 
 					   <div class="description-box">
 					      <h4>Barbas</h4>		      
-					      <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit.</p>
+					      <p>Barbas e bigodes</p>
 
-					      <div class="categories">Branding</div>			               
+					      <div class="categories"><b>↓</b></div>			               
 					   </div>
 
 			         <div class="link-box">
-			            <a href="#">Agende já</a>
+			            <a href="login.php">Agende já</a>
 					      <a href="#" class="popup-modal-dismiss">Fechar</a>
 			         </div>		      
 

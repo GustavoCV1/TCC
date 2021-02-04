@@ -6,6 +6,15 @@
       if (isset($_GET['unset'])) {
             unsetter();
       }
+
+      function senddetect() {
+          $status = $_GET['status'];
+          echo '<script type="text/javascript">alert("'.$status.'");</script>';        
+      }
+
+      if (isset($_GET['status'])) {
+          senddetect();
+      }
     ?>
 
 <!DOCTYPE html>

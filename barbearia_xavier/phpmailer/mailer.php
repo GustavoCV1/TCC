@@ -72,9 +72,6 @@ try {
         $mail->send();
         $erroEnvio = $mail->ErrorInfo;
         $contact = 1;
-        echo "<script type='text/javascript'>alert('O email foi enviado!');</script>";
-        $msg = "O email foi enviado!";
-        $_SESSION['mensagemcontato'] = $msg;
     }
     
     if (isset($_POST['signupform'])){      
@@ -111,7 +108,6 @@ try {
         $mail->send();
         $erroEnvio = $mail->ErrorInfo;
         $signup = 1;
-        echo "<script type='text/javascript'>alert('Um email para a verificação de conta foi enviado ao seu endereço de email!');</script>";
     }
     
     if (isset($_POST['recoveryform'])){      
@@ -150,33 +146,26 @@ try {
         $mail->send();
         $erroEnvio = $mail->ErrorInfo;
         $recovery = 1;
-        echo "<script type='text/javascript'>alert('Um email para a redefinição de senha foi enviado ao seu endereço de email!');</script>";
     }
     
 }
     
 catch (Exception $e) {
     if ($contact == 1) {
-        echo "<script type='text/javascript'>alert('Mensagem não enviada! Tente novamente mais tarde!');";
-        $erro = "Mensagem não enviada! Erro: {$erroEnvio}";
-        $_SESSION['mensagemcontato'] = $erro;
-        header("location:index.php");
+        $status = "Mensagem não enviada! Erro: ".$erroEnvio."";
+        header("location:index.php?status=".$status."");
         exit();
     }
     
     if ($signup == 1) {
-        echo "<script type='text/javascript'>alert('Email para a verificação de conta não enviado! Tente novamente mais tarde!');";
-        $erro = "Email para a verificação de conta não enviado! Erro: {$erroEnvio}";
-        $_SESSION['mensagemlogin'] = $erro;
-        header("location:login.php");
+        $status = "Email para a verificação de conta não enviado! Erro: ".$erroEnvio."";
+        header("location:login.php?status=".$status."");
         exit();
     }
     
     if ($recovery == 1) {
-        echo "<script type='text/javascript'>alert('Email para a redefinição de senha não enviado! Tente novamente mais tarde!');";
-        $erro = "Email para a redefinição de senha não enviado! Erro: {$erroEnvio}";
-        $_SESSION['mensagemrecovery'] = $erro;
-        header("location:recovery.php");
+        $status = "Email para a redefinição de senha não enviado! Erro: ".$erroEnvio."";
+        header("location:recovery.php?status=".$status."");
         exit();
     }
 }       

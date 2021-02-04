@@ -6,13 +6,22 @@
       if (isset($_GET['unset'])) {
             unsetter();
       }
+
+      function senddetect() {
+          $status = $_GET['status'];
+          echo '<script type="text/javascript">alert("'.$status.'");</script>';        
+      }
+
+      if (isset($_GET['status'])) {
+          senddetect();
+      }
     ?>
 
 <!DOCTYPE html>
 <html lang="en" >
 <head>
   <meta charset="UTF-8">
-  <title>Login</title>
+  <title>Recuperação de Senha</title>
   <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css'>
 <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900&amp;subset=latin,latin-ext'><link rel="stylesheet" href="./login.scss">
   <link rel="shortcut icon" href="imagens/logo_barbearia_2.png" type="image/x-icon"/>
