@@ -65,11 +65,11 @@
           <a class="navbar-brand">Barbearia Xavier</a>
         </div>
         <ul class="nav navbar-nav">
-          <li><a href="calendario.php">Atendimentos e Horários</a></li>
+          <li><a href="calendario.php" style="color:goldenrod;">Atendimentos e Horários</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="pagusuario.php"><span class="glyphicon glyphicon-user"></span> Minha Conta (<?php echo $nome; ?>)</a></li>
-          <li><a href="index.php?unset=true"><span class="glyphicon glyphicon-log-out"></span>Sair</a></li>
+          <li><a href="pagusuario.php" style="color:honeydew;"><span class="glyphicon glyphicon-user"></span> Minha Conta (<?php echo $nome; ?>)</a></li>
+          <li><a href="index.php?unset=true" style="color:firebrick;"><span class="glyphicon glyphicon-log-out"></span>Sair</a></li>
         </ul>
       </div>
     </nav>
@@ -153,4 +153,9 @@
 
 <?php       }
         }
-    }?>
+    }
+
+else{
+    header("location:index.php?unset=true&status=Erro fatal!");
+    exit();
+}?>

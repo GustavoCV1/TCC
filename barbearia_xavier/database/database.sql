@@ -35,4 +35,10 @@ CREATE TABLE atendimento (
 );
 
 INSERT INTO usuario (nome, email, senha, permissao, verificada) 
-	VALUES ("Administração", "barbeariaxavierkx@gmail.com", "$2y$10$cqO/JY1.MX0P74ZQQLlF5Ovn7nQKmcwTEdnyLB6ZZ7jp2vDR1tCDu", "A", "1");
+	VALUES ("Administrador", "barbeariaxavierkx@gmail.com", "$2y$10$K2qZIBB4dZfAAN0Oz/riouo8.77Pn4UfNnexoA0yw0xFh4coi7F8q", "A", "1");
+    
+INSERT INTO usuario (nome, email, senha, permissao, verificada) 
+	VALUES ("Empresa Plexus", "groupplexus@gmail.com", "$2y$10$Q28dZ6TB2FHcFRhCWjOrX.IfrwnIxagTD1A2nimsLw/XdffvB90bG", "F", "1");
+    
+INSERT INTO usuario (nome, email, senha, permissao, verificada) 
+	VALUES ("Gustavo Vasselai", "gyesgamer@gmail.com", "$2y$10$smkeRWDwhr5036gpiVeeR.wd.WMtdfZNY.EIbMOtwZi32KYUwHzBG", "U", "1");

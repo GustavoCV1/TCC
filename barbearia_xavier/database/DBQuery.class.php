@@ -148,7 +148,7 @@ class DBQuery {
 		return ($returnOK);
 	}
 	
-	function update2($values) {
+	function updateByKey($values) {
 	    $values = $this->clearArraySQLInjection($values);
 		$qtd = count($values);
 		$arrayFields = $this->getFields2();

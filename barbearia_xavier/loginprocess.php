@@ -6,7 +6,7 @@
     $email = $senha = "";
     session_start();
 
-    function stripit($data) {
+    function stripit($data) { //Função para a segurança dos dados. Retira muitos caracteres especiais.
         $data = trim($data);
         $data = stripslashes($data);
         $data = htmlspecialchars($data);
@@ -18,7 +18,7 @@
         $senha = stripit($_POST['pass']);
         
         $tableName  = "barbearia.usuario";
-        $fields     = "nome, email, senha, permissao, verificada";
+        $fields     = "idUsuario, nome, email, senha, permissao, verificada";
         $keyField   = "idUsuario";
         
         $dbquery = new DBQuery($tableName, $fields, $keyField);
@@ -31,6 +31,7 @@
         }
         
         while ($linha = mysqli_fetch_assoc($resultSet)) {
+            $meuid = $linha["idUsuario"];
             $nm = $linha["nome"];
             $em = $linha["email"];
             $senha_hasheada = $linha["senha"];
@@ -51,22 +52,25 @@
             
             if (mysqli_num_rows($resultSet)==1 && $perm =='U') {
                 $_SESSION['usuario'] = $nm;
+                $_SESSION['meuid'] = $meuid;
                 setcookie("usuario", $nm, time()+60*60*1000); #Não usar nome de cookie como única verificação, qualquer um pode mudar! Usar em preenchimento automático e etc. Ao deslogar, "logado" = false, mas o cookie permanece até expirar para preenchimentos e etc.
-                header("location:pagusuario.php");
+                header("location:calendario.php");
                 exit();
             }
         
             elseif (mysqli_num_rows($resultSet)==1 && $perm =='F') {
                 $_SESSION['usuario'] = $nm;
+                $_SESSION['meuid'] = $meuid;
                 setcookie("usuario", $nm, time()+60*60*1000);
-                header("location:pagfuncionario.php");
+                header("location:calendario.php");
                 exit();
             }
 
             elseif (mysqli_num_rows($resultSet)==1 && $perm =='A') {
                 $_SESSION['usuario'] = $nm;
+                $_SESSION['meuid'] = $meuid;
                 setcookie("usuario", $nm, time()+60*60*1000);
-                header("location:pagadm.php");
+                header("location:calendario.php");
                 exit();
             }
 

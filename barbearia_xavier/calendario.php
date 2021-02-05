@@ -2,6 +2,39 @@
     session_start();
     if (isset($_SESSION['usuario'])){
         $nome = $_SESSION['usuario'];
+        require $_SERVER['DOCUMENT_ROOT'] . '/barbearia_xavier/database/DBQuery.class.php';
+        
+        $tableName  = "barbearia.usuario";
+        $fields     = "nome, verificada";
+        $keyField   = "idUsuario";
+        
+        $dbquery1 = new DBQuery($tableName, $fields, $keyField);
+        $resultSet = $dbquery1->select("nome = '$nome' AND verificada = '1' LIMIT 1;");
+        
+        if (mysqli_num_rows($resultSet) == 0) {
+            $_SESSION['mensagemlogin'] = "Erro fatal!";
+            header("location:login.php?unset=true");
+            exit();
+        }
+        
+        else {
+            
+            $tableName  = "barbearia.usuario";
+            $fields     = "idUsuario, nome, email, telefone, permissao";
+            $keyField   = "idUsuario";
+            
+            $dbquery2 = new DBQuery($tableName, $fields, $keyField);
+            $resultSet = $dbquery2->select("nome = '$nome' LIMIT 1;");
+            
+            while ($linha = mysqli_fetch_assoc($resultSet)) {
+                $meuid = $linha["idUsuario"];
+                $_SESSION["meuid"] = $meuid;
+                $nome = $linha["nome"];
+                $email = $linha["email"];
+                $telefone = $linha["telefone"];
+                $permissao = $linha["permissao"];
+            }
+
 ?>
 
 <!DOCTYPE html>
@@ -33,6 +66,16 @@
     if(isset($_SESSION['msg'])){
         echo $_SESSION['msg'];
         unset($_SESSION['msg']);
+    }
+                
+    if ($permissao == "U"){
+        echo "<a href='pagusuario.php'><button type='button' class='btn btn-primary'>Voltar para o Perfil</button></a>";
+    }
+    elseif ($permissao == "F"){
+        echo "<a href='pagfuncionario.php'><button type='button' class='btn btn-primary'>Voltar para o Perfil</button></a>";
+    }
+    elseif ($permissao == "A"){
+        echo "<a href='pagadm.php'><button type='button' class='btn btn-primary'>Voltar para o Gerenciamento</button></a>";
     }
   ?>
   <div id='calendar'></div>
@@ -120,4 +163,11 @@
 
 </body>
 </html>
-<?php } ?>
+<?php
+        }
+    }
+
+else{
+    header("location:index.php?unset=true&status=Erro fatal!");
+    exit();
+}?>

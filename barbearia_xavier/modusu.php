@@ -1,7 +1,8 @@
 <?php
     session_start();
-    if (isset($_SESSION['usuario'])){
+    if (isset($_SESSION['usuario']) && isset($_GET['id'])){
         $nome = $_SESSION['usuario'];
+        $iddel = $_GET['id'];
         require $_SERVER['DOCUMENT_ROOT'] . '/barbearia_xavier/database/DBQuery.class.php';
         
         $tableName  = "barbearia.usuario";
@@ -20,16 +21,13 @@
         else {
             
             $tableName  = "barbearia.usuario";
-            $fields     = "idUsuario, nome, email, telefone, permissao";
+            $fields     = "nome, email, telefone, permissao";
             $keyField   = "idUsuario";
             
             $dbquery2 = new DBQuery($tableName, $fields, $keyField);
             $resultSet = $dbquery2->select("nome = '$nome' LIMIT 1;");
             
             while ($linha = mysqli_fetch_assoc($resultSet)) {
-                $meuid = $linha["idUsuario"];
-                $_SESSION['meuid'] = $meuid;
-                $nome = $linha["nome"];
                 $email = $linha["email"];
                 $telefone = $linha["telefone"];
                 $permissao = $linha["permissao"];
@@ -44,7 +42,7 @@
     
 <head>
 <meta charset='utf-8'>
-<title><?php echo $nome . " | Administração da Barbearia Xavier"; ?></title>
+<title>Modificação de Usuários</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css'>
 <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900&amp;subset=latin,latin-ext'><link rel="stylesheet" href="./login.scss">
@@ -58,6 +56,11 @@
 <link href="https://fonts.googleapis.com/css2?family=Arimo:wght@700&display=swap" rel="stylesheet">
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    
+<script type="text/javascript">
+    alert("Se não for modificar uma informação, escreva o dado que já está preenchido! Só deixe um espaço vazio se ele JÁ ESTIVER VAZIO!");
+</script>
+    
 </head>
     
 <body>
@@ -71,52 +74,68 @@
           <li><a href="calendario.php" style="color:goldenrod;">Atendimentos e Horários</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="pagadm.php" style="color:honeydew;"><span class="glyphicon glyphicon-user"></span> Gerenciamento de Contas (<?php echo $nome; ?>)</a></li>
+          <li><a href="pagadm.php" style="color:honeydew;"><span class="glyphicon glyphicon-user"></span> Gerenciamento de Contas</a></li>
           <li><a href="index.php?unset=true" style="color:firebrick;"><span class="glyphicon glyphicon-log-out"></span>Sair</a></li>
         </ul>
       </div>
     </nav>
     
-    <div id="conta">
-        <table>
-            
-        <?php
-            $tableName  = "barbearia.usuario";
-            $fields     = "idUsuario, nome, email, telefone, permissao, verificada";
-            $keyField   = "idUsuario";
-                                   
-            $dbquery3 = new DBQuery($tableName, $fields, $keyField);
-            $resultSet = $dbquery3->select("1 = 1");
-                                   
-            echo "<tr>
-                    <th>Id do Usuário</th>
-                    <th>Nome</th>
-                    <th>Email</th>
-                    <th>Telefone</th>
-                    <th>Permissão (Adm, Funcionário, Usuário)</th>
-                    <th>Verificado? (0 = Não, 1 = Sim)</th>
-                    <th>Modificar Usuário</th>
-                    <th>Deletar Usuário</th>
-                </tr>";
-            while($exibe = mysqli_fetch_assoc($resultSet)){
-                echo "<tr>
-                        <th>".$exibe['idUsuario']."</th>
-                        <th>".$exibe['nome']."</th>
-                        <th>".$exibe['email']."</th>
-                        <th>".$exibe['telefone']."</th>
-                        <th>".$exibe['permissao']."</th>
-                        <th>".$exibe['verificada']."</th>";
-                    if ($exibe['idUsuario'] != $meuid){
-                        
-                        echo "<th><a href='modusu.php?id=".$exibe['idUsuario']."'><img src='imagens/two.png' width='30px' length='30px'></a></th>
-                              <th><a href='delusu.php?id=".$exibe['idUsuario']."'><img src='imagens/lamina-de-barbear.png' width='30px' length='30px'></a></th>";
-                    }
+    <div class="materialContainer">
 
-                echo "</tr>";
-            }
-        ?>
-            
-        </table>
+       <div class="box">
+
+           <form id="modform" role="form" method="POST" action="<?php echo htmlspecialchars("accountprocess.php")?>">
+               
+                <?php
+                    $tableName  = "barbearia.usuario";
+                    $fields     = "nome, email, telefone, permissao, verificada";
+                    $keyField   = "idUsuario";
+
+                    $dbquery3 = new DBQuery($tableName, $fields, $keyField);
+                    $resultSet = $dbquery3->selectByKey($id);
+                    $dados = mysqli_fetch_assoc($resultSet)
+                ?>
+               
+               <input type="hidden" id="id" name="id" value="<?php echo $iddel; ?>">
+               
+               <div class="input">
+                 <label for="nome">Nome</label>
+                 <input type="text" name="nome" id="nome" value="<?php echo $dados['nome']; ?>">
+                 <span class="spin"></span>
+              </div>
+               
+              <div class="input">
+                 <label for="email">Email</label>
+                 <input type="email" name="email" id="email" value="<?php echo $dados['email']; ?>">
+                 <span class="spin"></span>
+              </div>
+               
+               <div class="input">
+                 <label for="telefone">Telefone</label>
+                 <input type="text" name="telefone" id="telefone" value="<?php echo $dados['telefone']; ?>">
+                 <span class="spin"></span>
+              </div>
+               
+               <div class="input">
+                 <label for="permissao">Permissão (A, F, ou U)</label>
+                 <input type="text" name="permissao" id="permissao" value="<?php echo $dados['permissao']; ?>">
+                 <span class="spin"></span>
+              </div>
+
+               <div class="input">
+                 <label for="verificada">Verificação (0 ou 1)</label>
+                 <input type="num" name="verificada" id="verificada" value="<?php echo $dados['verificada']; ?>">
+                 <span class="spin"></span>
+              </div>
+
+              <div class="button login">
+                 <button type="submit" id="btn-login" name="modform"><span>Alterar</span> <i class="fa fa-check"></i></button>
+              </div>
+
+          </form>
+
+       </div>
+
     </div>
 
 <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script><script  src="./login.js"></script>
