@@ -24,14 +24,11 @@ CREATE TABLE servico (
 
 CREATE TABLE atendimento (
     idAtendimento   INT NOT NULL auto_increment,
-    cliente         INT NOT NULL,
-    barbeiro        INT NOT NULL,
-    servico         INT NOT NULL,
-    horario			DATETIME, -- {AAAA/MM/DD hh:mm:ss:(fração)}
+    cliente         VARCHAR(255),
+    barbeiro        VARCHAR(255),
+    servico         VARCHAR(255),
+    horario            DATETIME, -- {AAAA/MM/DD hh:mm:ss:(fração)}
     PRIMARY KEY (idAtendimento),
-    FOREIGN KEY (cliente) REFERENCES usuario(idUsuario),
-    FOREIGN KEY (barbeiro) REFERENCES usuario(idUsuario),
-    FOREIGN KEY (servico) REFERENCES servico(idServico)
 );
 
 INSERT INTO usuario (nome, email, senha, permissao, verificada) 

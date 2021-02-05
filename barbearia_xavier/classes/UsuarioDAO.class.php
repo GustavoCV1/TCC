@@ -10,7 +10,7 @@ class UsuarioDAO {
     function __construct() {
         
         $tableName  = "barbearia.usuario";
-        $fields     = "idUsuario, nome, email, senha, telefone, permissao, foto";
+        $fields     = "idUsuario, nome, email, senha, telefone, permissao, chave, verificada";
         $keyField   = "idUsuario";
         
         $this->dbQuery = new DBQuery($tableName, $fields, $keyField);

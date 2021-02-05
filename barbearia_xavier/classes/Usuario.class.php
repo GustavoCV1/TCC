@@ -12,19 +12,21 @@ class Usuario{
     private $senha;
     private $telefone;
     private $permissao;
-    private $foto;
+    private $chave;
+    private $verificada;
     
     private $usuarioDAO;
     
     
-    function  __construct( $idUsuario, $nome, $email, $senha, $telefone, $permissao, $foto ){
+    function  __construct( $idUsuario, $nome, $email, $senha, $telefone, $permissao, $chave, $verificada ){
          $this->setIdUsuario($idUsuario);
          $this->setNome($nome);
          $this->setEmail($email);
          $this->setSenha($senha);
          $this->setTelefone($telefone);
          $this->setPermissao($permissao);
-         $this->setFoto($foto);
+         $this->setChave($chave);
+         $this->setVerificada($verificada);
          
          $this->usuarioDAO = new UsuarioDAO();
     }
@@ -39,7 +41,8 @@ class Usuario{
                 $this->getSenha(),
                 $this->getTelefone(),
                 $this->getPermissao(),
-                $this->getFoto()
+                $this->getChave();
+                $this->getVerificada();
             )
         );
     }
@@ -158,12 +161,21 @@ class Usuario{
         return $this;
     }
     
-    public function getFoto(){
-        return $this->foto;
+    public function getChave(){
+        return $this->chave;
     }
 
-    public function setFoto($foto){
-        $this->foto = $foto;
+    public function setChave($chave){
+        $this->chave = $chave;
+        return $this;
+    }
+
+    public function getVerificada(){
+        return $this->verificada;
+    }
+
+    public function setVerificada($verificada){
+        $this->verificada = $verificada;
         return $this;
     }
 
