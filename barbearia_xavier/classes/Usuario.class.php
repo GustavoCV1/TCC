@@ -41,8 +41,8 @@ class Usuario{
                 $this->getSenha(),
                 $this->getTelefone(),
                 $this->getPermissao(),
-                $this->getChave();
-                $this->getVerificada();
+                $this->getChave(),
+                $this->getVerificada()
             )
         );
     }

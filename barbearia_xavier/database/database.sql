@@ -28,7 +28,7 @@ CREATE TABLE atendimento (
     barbeiro        VARCHAR(255),
     servico         VARCHAR(255),
     horario            DATETIME, -- {AAAA/MM/DD hh:mm:ss:(fração)}
-    PRIMARY KEY (idAtendimento),
+    PRIMARY KEY (idAtendimento)
 );
 
 INSERT INTO usuario (nome, email, senha, permissao, verificada) 
